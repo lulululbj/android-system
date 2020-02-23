@@ -1,3 +1,3 @@
-# gitbook-template
+# Android System
 
-说明详见 https://github.com/riskers/blog/issues/48
+自用面试整理，安卓完整知识体系 。

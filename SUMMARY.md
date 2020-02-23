@@ -2,10 +2,10 @@
 
 * [About](./README.md)
 
-## Chap01
+## 网络基础
 
-* [1-1](./chap01/1-1.md)
+* [HTTP](./network/http.md)
 
-## Chap02
+## 数据结构和算法
 
 * [2-1](./chap02/2-1.md)
