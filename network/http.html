@@ -1,0 +1,1103 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>HTTP · Android System</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="秉心说">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-bibtex-indexed-cite/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../chap02/2-1.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"lulululbj","repo":"android-system","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">网络基础</li>
+        
+        
+    
+        <li class="chapter active" data-level="2.1" data-path="http.html">
+            
+                <a href="http.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据结构和算法</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../chap02/2-1.html">
+            
+                <a href="../chap02/2-1.html">
+            
+                    
+                    2-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >HTTP</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#http-&#x534F;&#x8BAE;"><b></b>HTTP &#x534F;&#x8BAE;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4EC0;&#x4E48;&#x662F;-http-&#xFF1F;"><b></b>&#x4EC0;&#x4E48;&#x662F; HTTP &#xFF1F;</a></li><li><span class="title-icon "></span><a href="#http-&#x7248;&#x672C;"><b></b>HTTP &#x7248;&#x672C;</a></li><li><span class="title-icon "></span><a href="#uri&#x3001;url&#x3001;urn"><b></b>URI&#x3001;URL&#x3001;URN</a></li><li><span class="title-icon "></span><a href="#&#x62A5;&#x6587;&#x683C;&#x5F0F;"><b></b>&#x62A5;&#x6587;&#x683C;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;"><b></b>&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x72B6;&#x6001;&#x7801;"><b></b>&#x72B6;&#x6001;&#x7801;</a></li><li><span class="title-icon "></span><a href="#&#x62A5;&#x6587;&#x9996;&#x90E8;"><b></b>&#x62A5;&#x6587;&#x9996;&#x90E8;</a></li><ul><li><span class="title-icon "></span><a href="#&#x901A;&#x7528;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><b></b>&#x901A;&#x7528;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#&#x8BF7;&#x6C42;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><b></b>&#x8BF7;&#x6C42;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#&#x54CD;&#x5E94;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><b></b>&#x54CD;&#x5E94;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</a></li><li><span class="title-icon "></span><a href="#&#x5B9E;&#x4F53;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><b></b>&#x5B9E;&#x4F53;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</a></li></ul></ul></ul></div><a href="#http-&#x534F;&#x8BAE;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="http-&#x534F;&#x8BAE;"><a name="http-&#x534F;&#x8BAE;" class="anchor-navigation-ex-anchor" href="#http-&#x534F;&#x8BAE;"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP &#x534F;&#x8BAE;</h1>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;-http-&#xFF1F;"><a name="&#x4EC0;&#x4E48;&#x662F;-http-&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;-http-&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EC0;&#x4E48;&#x662F; HTTP &#xFF1F;</h2>
+<p><strong>HTTP&#xFF08;HyperText Transfer Protocol&#xFF0C;&#x8D85;&#x6587;&#x672C;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#xFF09;</strong> &#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x4E4B;&#x95F4;&#x7684;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x3002;</p>
+<p>&#x534F;&#x8BAE;&#x5C31;&#x662F;&#x8BA1;&#x7B97;&#x673A;&#x4E0E;&#x8BA1;&#x7B97;&#x673A;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;&#x7F51;&#x7EDC;&#x5B9E;&#x73B0;&#x901A;&#x4FE1;&#x65F6;&#x4E8B;&#x5148;&#x8FBE;&#x6210;&#x7684;&#x4E00;&#x79CD;&#x201C;&#x7EA6;&#x5B9A;&#x201D;&#x3002;&#x8FD9;&#x79CD;&#x201C;&#x7EA6;&#x5B9A;&#x201D;&#x4F7F;&#x90A3;&#x4E9B;&#x7531;&#x4E0D;&#x540C;&#x5382;&#x5546;&#x7684;&#x8BBE;&#x5907;&#x3001;&#x4E0D;&#x540C;&#x7684; CPU &#x4EE5;&#x53CA;&#x4E0D;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7EC4;&#x6210;&#x7684;&#x8BA1;&#x7B97;&#x5668;&#x4E4B;&#x95F4;&#xFF0C;&#x53EA;&#x8981;&#x9075;&#x5FAA;&#x76F8;&#x540C;&#x7684;&#x534F;&#x8BAE;&#x5C31;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x901A;&#x4FE1;&#x3002;</p>
+<p>HTTP &#x5C5E;&#x4E8E; OSI &#x53C2;&#x8003;&#x6A21;&#x578B;&#x4E2D;&#x7684; <strong>&#x5E94;&#x7528;&#x5C42;&#x534F;&#x8BAE;</strong> &#x3002;&#x5176;&#x4ED6;&#x5E94;&#x7528;&#x5C42;&#x534F;&#x8BAE;&#x8FD8;&#x6709; <strong>SMTP</strong> &#x3001;<strong>FTP</strong>&#x3001;<strong>TELNET/SSH</strong>&#x3001;<strong>SNMP</strong> &#x3002;</p>
+<blockquote>
+<p>HTTP &#x901A;&#x5E38;&#x88AB;&#x8BD1;&#x4E3A;&#x8D85;&#x6587;&#x672C;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#xFF0C;&#x4F46;&#x8FD9;&#x79CD;&#x8BD1;&#x6CD5;&#x5E76;&#x4E0D;&#x4E25;&#x8C28;&#x3002;&#x4E25;&#x8C28;&#x7684;&#x8BD1;&#x540D;&#x5E94;&#x8BE5;&#x4E3A; &#x201C;&#x8D85;&#x6587;&#x672C;&#x8F6C;&#x79FB;&#x534F;&#x8BAE;&#x201D;&#x3002;&#x4F46;&#x662F;&#x524D;&#x79FB;&#x8BD1;&#x6CD5;&#x5DF2;&#x7ECF;&#x7EA6;&#x5B9A;&#x4FD7;&#x6210;&#x3002;</p>
+</blockquote>
+<h2 id="http-&#x7248;&#x672C;"><a name="http-&#x7248;&#x672C;" class="anchor-navigation-ex-anchor" href="#http-&#x7248;&#x672C;"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP &#x7248;&#x672C;</h2>
+<ul>
+<li><p>HTTP/0.9</p>
+<p>HTTP &#x7684; 1991 &#x539F;&#x578B;&#x7248;&#x672C;&#x79F0;&#x4E3A; HTTP/0.9 &#x3002;&#x8FD9;&#x4E2A;&#x534F;&#x8BAE;&#x6709;&#x5F88;&#x591A;&#x4E25;&#x91CD;&#x7684;&#x8BBE;&#x8BA1;&#x7F3A;&#x9677;&#xFF0C;&#x53EA;&#x7528;&#x4E8E;&#x548C;&#x8001;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4EA4;&#x4E92;&#x3002;HTTP/0.9 &#x53EA;&#x652F;&#x6301; GET &#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x652F;&#x6301;&#x591A;&#x5A92;&#x4F53;&#x5185;&#x5BB9;&#x7684; MIME &#x7C7B;&#x578B;&#x3001;&#x5404;&#x79CD; HTTP &#x9996;&#x90E8;&#xFF0C;&#x6216;&#x8005;&#x7248;&#x672C;&#x53F7;&#x3002;HTTP/0.9 &#x5B9A;&#x4E49;&#x7684;&#x521D;&#x8877;&#x662F;&#x4E3A;&#x4E86;&#x83B7;&#x53D6;&#x7B80;&#x5355;&#x7684; HTML &#xFF0C;&#x5F88;&#x5FEB;&#x5C31;&#x88AB; HTTP/1.0 &#x4EE3;&#x66FF;&#x4E86;&#x3002;</p>
+</li>
+<li><p>HTTP/1.0</p>
+<p>1.0 &#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x5F97;&#x5230;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684; HTTP &#x7248;&#x672C;&#x3002;HTTP/1.0 &#x6DFB;&#x52A0;&#x4E86;&#x7248;&#x672C;&#x53F7;&#x3001;&#x5404;&#x79CD; HTTP &#x9996;&#x90E8;&#x3001;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x5BF9;&#x591A;&#x5A92;&#x4F53;&#x5BF9;&#x8C61;&#x7684;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x5176;&#x4ED6;&#x7684;&#x65B0;&#x589E;&#x529F;&#x80FD;&#x8FD8;&#x5305;&#x62EC;&#x72B6;&#x6001;&#x7801;&#xFF08;status code&#xFF09;&#x3001;&#x591A;&#x5B57;&#x7B26;&#x96C6;&#x652F;&#x6301;&#x3001;&#x591A;&#x90E8;&#x5206;&#x53D1;&#x9001;&#xFF08;multi-part type&#xFF09;&#x3001;&#x6743;&#x9650;&#xFF08;authorization&#xFF09;&#x3001;&#x7F13;&#x5B58;&#xFF08;cache&#xFF09;&#x3001;&#x5185;&#x5BB9;&#x7F16;&#x7801;&#xFF08;content encoding&#xFF09;&#x7B49;&#x3002;</p>
+<p>&#x4F46;&#x662F; 1.0 &#x7248;&#x672C;&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x662F;&#x6BCF;&#x6B21; TCP &#x8FDE;&#x63A5;&#x53EA;&#x80FD;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#xFF0C;&#x5F53;&#x670D;&#x52A1;&#x5668;&#x54CD;&#x5E94;&#x540E;&#x5C31;&#x4F1A;&#x5173;&#x95ED;&#x8FD9;&#x6B21;&#x8FDE;&#x63A5;&#xFF0C;&#x4E0B;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x9700;&#x8981;&#x518D;&#x6B21;&#x5EFA;&#x7ACB; TCP &#x8FDE;&#x63A5;&#xFF0C;&#x5C31;&#x662F;&#x4E0D;&#x652F;&#x6301; keep-alive &#x3002;</p>
+</li>
+<li><p>HTTP/1.1</p>
+<p>1.1 &#x662F;&#x76EE;&#x524D;&#x4E3B;&#x6D41;&#x7684; HTTP &#x534F;&#x8BAE;&#x7248;&#x672C;&#xFF0C;&#x91CD;&#x70B9;&#x6821;&#x6B63;&#x4E86; HTTP &#x8BBE;&#x8BA1;&#x4E2D;&#x7684;&#x7ED3;&#x6784;&#x6027;&#x7F3A;&#x9677;&#xFF0C;&#x660E;&#x786E;&#x8BED;&#x4E49;&#xFF0C;&#x5F15;&#x5165;&#x91CD;&#x8981;&#x7684;&#x6027;&#x80FD;&#x4F18;&#x5316;&#x63AA;&#x65BD;&#xFF0C;&#x5E76;&#x5220;&#x9664;&#x4E00;&#x4E9B;&#x4E0D;&#x597D;&#x7684;&#x7279;&#x6027;&#x3002;</p>
+<p>&#x6700;&#x5927;&#x7684;&#x53D8;&#x5316;&#x5C31;&#x662F;&#x5F15;&#x5165;&#x4E86;&#x6301;&#x4E45;&#x8FDE;&#x63A5;&#xFF0C;&#x5373; TCP &#x8FDE;&#x63A5;&#x9ED8;&#x8BA4;&#x4E0D;&#x5173;&#x95ED;&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x591A;&#x4E2A;&#x8BF7;&#x6C42;&#x590D;&#x7528;&#xFF0C;&#x4E0D;&#x7528;&#x58F0;&#x660E;<code>Connection: keep-alive</code> &#xFF0C;&#x4E00;&#x4E2A; TCP &#x8FDE;&#x63A5;&#x5141;&#x8BB8;&#x591A;&#x4E2A; HTTP &#x8BF7;&#x6C42;&#x3002;</p>
+</li>
+<li><p>HTTP/2.0</p>
+<p>HTTP/2.0 &#x662F; HTTP &#x534F;&#x8BAE;&#x81EA; 1999 &#x5E74; HTTP/1.1 &#x53D1;&#x5E03;&#x540E;&#x7684;&#x9996;&#x4E2A;&#x66F4;&#x65B0;&#xFF0C;&#x4E3B;&#x8981;&#x57FA;&#x4E8E; SPDY &#x534F;&#x8BAE;&#xFF0C;&#x5728;&#x4E0D;&#x6539;&#x52A8;HTTP&#x8BED;&#x4E49;&#x3001;&#x65B9;&#x6CD5;&#x3001;&#x72B6;&#x6001;&#x7801;&#x3001;URI &#x53CA;&#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5927;&#x5E45;&#x5EA6;&#x63D0;&#x9AD8;&#x4E86;Web &#x6027;&#x80FD; &#x3002;&#x5B83;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x7279;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x4E8C;&#x8FDB;&#x5236;&#x4F20;&#x8F93;&#x3002;HTTP/1.x &#x7248;&#x672C;&#x91C7;&#x7528;&#x7684;&#x662F;&#x6587;&#x672C;&#x683C;&#x5F0F;</li>
+<li>&#x591A;&#x8DEF;&#x590D;&#x7528;&#x3002;&#x89E3;&#x51B3;&#x65E7;&#x7248;&#x672C;&#x7684;&#x5BF9;&#x5934;&#x963B;&#x585E;(Head of line blocking) &#x95EE;&#x9898;&#xFF0C;&#x4E00;&#x4E2A; TCP &#x8FDE;&#x63A5;&#x4E2D;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x6D41;&#xFF0C;&#x5373;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x591A;&#x4E2A;&#x8BF7;&#x6C42;</li>
+<li>header &#x538B;&#x7F29;&#x3002;&#x51CF;&#x5C0F; header &#x5927;&#x5C0F;</li>
+<li>&#x670D;&#x52A1;&#x5668; Push&#x3002;&#x670D;&#x52A1;&#x7AEF;&#x53EF;&#x4EE5;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x67D0;&#x4E2A;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x4E3B;&#x52A8;&#x63A8;&#x9001;&#x5176;&#x4ED6;&#x8D44;&#x6E90;</li>
+</ul>
+</li>
+</ul>
+<p>&#x53C2;&#x8003;&#x8D44;&#x6599; &#xFF1A; <a href="https://segmentfault.com/a/1190000016656529" target="_blank">&#x3010;&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x7CFB;&#x5217;&#x3011;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x8BA9;&#x4F60;&#x5165;&#x95E8;HTTP2.0](https://segmentfault.com/a/1190000016656529)</a></p>
+<h2 id="uri&#x3001;url&#x3001;urn"><a name="uri&#x3001;url&#x3001;urn" class="anchor-navigation-ex-anchor" href="#uri&#x3001;url&#x3001;urn"><i class="fa fa-link" aria-hidden="true"></i></a>URI&#x3001;URL&#x3001;URN</h2>
+<p><strong>URI&#xFF0C;Uniform Resource Identifier &#xFF0C;&#x7EDF;&#x4E00;&#x8D44;&#x6E90;&#x6807;&#x8BC6;&#x7B26;</strong> &#x3002;&#x7528;&#x6765;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x5E76;&#x5B9A;&#x4F4D;&#x8D44;&#x6E90;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x7531;&#x4E24;&#x4E2A;&#x4E3B;&#x8981;&#x7684;&#x5B50;&#x96C6; URL &#x548C; URN &#x6784;&#x6210;&#x3002;</p>
+<p><strong>URL&#xFF0C;Uniform Resource Locator &#xFF0C;&#x7EDF;&#x4E00;&#x8D44;&#x6E90;&#x5B9A;&#x4F4D;&#x7B26;</strong> &#x3002;URL &#x63CF;&#x8FF0;&#x4E86;&#x4E00;&#x53F0;&#x7279;&#x5B9A;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x67D0;&#x8D44;&#x6E90;&#x7684;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;&#x3002;&#x6211;&#x4EEC;&#x5E38;&#x89C1;&#x7684;&#x5404;&#x79CD;&#x7F51;&#x5740;&#x5C31;&#x662F;&#x5178;&#x578B;&#x7684; URL &#xFF0C;&#x4E00;&#x822C;&#x9075;&#x5FAA;&#x901A;&#x7528;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre class="language-"><code>&#x534F;&#x8BAE;&#x7C7B;&#x578B;://&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;[:&#x7AEF;&#x53E3;&#x53F7;]/&#x8DEF;&#x5F84;
+</code></pre><p>&#x4EE5;&#x6211;&#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;&#x7684;&#x5173;&#x4E8E;&#x9875;&#x9762;&#x4E3A;&#x4F8B;&#xFF0C;<a href="https://luyao.tech/s/me" target="_blank">https://luyao.tech/s/me</a> &#xFF0C;&#x534F;&#x8BAE;&#x7C7B;&#x578B;&#x662F; <code>http</code> &#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#x662F; <code>luyao.tech</code> &#xFF0C;&#x8D44;&#x6E90;&#x8DEF;&#x5F84;&#x662F; <code>/s/me</code> &#x3002;</p>
+<p><strong>URN , Uniform Resource Name ,  &#x7EDF;&#x4E00;&#x8D44;&#x6E90;&#x540D;</strong> &#x3002;&#x4E0E; URL &#x4F7F;&#x7528;&#x8D44;&#x6E90;&#x8DEF;&#x5F84;&#x5B9A;&#x4F4D;&#x4E0D;&#x540C;&#xFF0C;URN &#x4F7F;&#x7528;&#x7279;&#x5B9A;&#x5185;&#x5BB9;&#x7684;&#x552F;&#x4E00;&#x540D;&#x79F0;&#x6765;&#x5B9A;&#x4F4D;&#xFF0C;&#x4E0E;&#x8D44;&#x6E90;&#x4F4D;&#x7F6E;&#x65E0;&#x5173;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x8D44;&#x6E90;&#x56DB;&#x5904;&#x642C;&#x79FB;&#x3002;&#x4F46;&#x662F;&#x4ECE; URL &#x8F6C;&#x6362;&#x5230; URN &#x662F;&#x4E00;&#x9879;&#x5DE8;&#x5927;&#x7684;&#x5DE5;&#x7A0B;&#xFF0C;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x5E76;&#x6CA1;&#x6709;&#x591A;&#x5927;&#x8FDB;&#x5C55;&#x3002;</p>
+<h2 id="&#x62A5;&#x6587;&#x683C;&#x5F0F;"><a name="&#x62A5;&#x6587;&#x683C;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x62A5;&#x6587;&#x683C;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x62A5;&#x6587;&#x683C;&#x5F0F;</h2>
+<p><strong>&#x8BF7;&#x6C42;&#x62A5;&#x6587;</strong></p>
+<pre class="language-"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>method</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>request-URL</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>headers</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>entity-body</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p><img src="http://cdn.luyao.tech/%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87.png" alt="&#x8BF7;&#x6C42;&#x62A5;&#x6587;"></p>
+<p><strong>&#x54CD;&#x5E94;&#x62A5;&#x6587;</strong></p>
+<pre class="language-"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>status</span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>reason-phase</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>headers</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>entity-body</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p><img src="http://cdn.luyao.tech/%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87.png" alt="&#x54CD;&#x5E94;&#x62A5;&#x6587;"></p>
+<h2 id="&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;"><a name="&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;</h2>
+<p><strong>GET</strong> &#x65B9;&#x6CD5;&#x7528;&#x6765;&#x8BF7;&#x6C42;&#x8BBF;&#x95EE;&#x5DF2;&#x88AB; URI &#x8BC6;&#x522B;&#x7684;&#x8D44;&#x6E90;&#x3002;&#x6307;&#x5B9A;&#x7684;&#x8D44;&#x6E90;&#x7ECF;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x89E3;&#x6790;&#x540E;&#x8FD4;&#x56DE;&#x54CD;&#x5E94;&#x5185;&#x5BB9;&#x3002;&#x4E0D;&#x4FEE;&#x6539;&#x670D;&#x52A1;&#x5668;&#x6570;&#x636E;&#x3002;<strong>&#x652F;&#x6301; 1.0&#x3001;1.1 &#x7248;&#x672C; &#x3002;</strong></p>
+<p><strong>POST</strong> &#x65B9;&#x6CD5;&#x7528;&#x6765;&#x5411;&#x670D;&#x52A1;&#x5668;&#x4F20;&#x8F93;&#x6570;&#x636E;&#xFF0C;&#x4F1A;&#x589E;&#x52A0;&#x6216;&#x8005;&#x4FEE;&#x6539;&#x670D;&#x52A1;&#x5668;&#x6570;&#x636E;&#x3002;&#x8981;&#x4F20;&#x8F93;&#x7684;&#x6570;&#x636E;&#x5199;&#x5728; body &#x4E2D;&#x3002;<strong>&#x652F;&#x6301; 1.0&#x3001;1.1 &#x7248;&#x672C; &#x3002;</strong></p>
+<p><strong>PUT</strong> &#x65B9;&#x6CD5;&#x4F1A;&#x5411;&#x670D;&#x52A1;&#x5668;&#x5199;&#x5165;&#x6587;&#x6863;&#x3002;&#x5B83;&#x7684;&#x8BED;&#x4E49;&#x5C31;&#x662F;&#x8BA9;&#x670D;&#x52A1;&#x5668;&#x7528;&#x8BF7;&#x6C42;&#x7684; body &#x90E8;&#x5206;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7531;&#x6240;&#x8BF7;&#x6C42;&#x7684; URL &#x547D;&#x540D;&#x7684;&#x65B0;&#x6587;&#x6863;&#xFF0C;&#x5982;&#x679C;&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x5C31;&#x4EE3;&#x66FF;&#x5B83;&#x3002;<strong>&#x652F;&#x6301; 1.0&#x3001;1.1 &#x7248;&#x672C; &#x3002;</strong></p>
+<p><strong>HEAD</strong> &#x65B9;&#x6CD5;&#x4E0E; GET &#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x662F;&#x670D;&#x52A1;&#x5668;&#x53EA;&#x4F1A;&#x8FD4;&#x56DE;&#x9996;&#x90E8;&#xFF0C;&#x4E0D;&#x4F1A;&#x8FD4;&#x56DE; body &#x3002;<strong>&#x652F;&#x6301; 1.0&#x3001;1.1 &#x7248;&#x672C; &#x3002;</strong> &#x53EF;&#x4EE5;&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#x4E0D;&#x83B7;&#x53D6;&#x8D44;&#x6E90;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E86;&#x89E3;&#x8D44;&#x6E90;&#x7684;&#x60C5;&#x51B5;&#xFF08;&#x6BD4;&#x5982;&#xFF0C;&#x5224;&#x65AD;&#x5176;&#x7C7B;&#x578B;&#xFF09;</li>
+<li>&#x901A;&#x8FC7;&#x67E5;&#x770B;&#x54CD;&#x5E94;&#x4E2D;&#x7684;&#x72B6;&#x6001;&#x7801;&#xFF0C;&#x67E5;&#x770B;&#x8D44;&#x6E90;&#x662F;&#x5426;&#x5B58;&#x5728;</li>
+<li>&#x901A;&#x8FC7;&#x67E5;&#x770B;&#x9996;&#x90E8;&#xFF0C;&#x6D4B;&#x8BD5;&#x8D44;&#x6E90;&#x662F;&#x5426;&#x88AB;&#x4FEE;&#x6539;</li>
+</ul>
+<p><strong>DELETE</strong> &#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5220;&#x9664;&#x6307;&#x5B9A;&#x8D44;&#x6E90;&#x3002;<strong>&#x652F;&#x6301; 1.0&#x3001;1.1 &#x7248;&#x672C; &#x3002;</strong></p>
+<p><strong>OPTIONS</strong> &#x65B9;&#x6CD5;&#x8BF7;&#x6C42; Web &#x670D;&#x52A1;&#x5668;&#x544A;&#x77E5;&#x5176;&#x652F;&#x6301;&#x7684;&#x5404;&#x79CD;&#x529F;&#x80FD;&#x3002;&#x53EF;&#x4EE5;&#x8BE2;&#x95EE;&#x670D;&#x52A1;&#x5668;&#x901A;&#x5E38;&#x652F;&#x6301;&#x54EA;&#x4E9B;&#x65B9;&#x6CD5;&#xFF0C;&#x6216;&#x8005;&#x5BF9;&#x67D0;&#x4E9B;&#x7279;&#x6B8A;&#x8D44;&#x6E90;&#x652F;&#x6301;&#x54EA;&#x4E9B;&#x65B9;&#x6CD5;&#x3002;<strong>&#x4EC5;&#x652F;&#x6301; 1.1 &#x7248;&#x672C; &#x3002;</strong></p>
+<p><strong>TRACE</strong> &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8BA9;&#x670D;&#x52A1;&#x5668;&#x5C06;&#x4E4B;&#x524D;&#x7684;&#x8BF7;&#x6C42;&#x901A;&#x4FE1;&#x8FD4;&#x56DE;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x8FC7; TRACE &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x53D1;&#x9001;&#x51FA;&#x53BB;&#x7684;&#x8BF7;&#x6C42;&#x662F;&#x600E;&#x6837;&#x88AB;&#x52A0;&#x5DE5;&#x4FEE;&#x6539;/&#x7BE1;&#x6539;&#x7684;&#x3002;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x8BCA;&#x65AD;&#x3002;<strong>&#x4EC5;&#x652F;&#x6301; 1.1 &#x7248;&#x672C; &#x3002;</strong></p>
+<p><strong>CONNECT</strong> &#x65B9;&#x6CD5;&#x8981;&#x6C42;&#x5728;&#x4E0E;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x901A;&#x4FE1;&#x65F6;&#x5EFA;&#x7ACB;&#x96A7;&#x9053;,&#x5B9E;&#x73B0;&#x7528;&#x96A7;&#x9053;&#x534F;&#x8BAE;&#x8FDB;&#x884C; TCP &#x901A;&#x4FE1;&#x3002;&#x4E3B;&#x8981;&#x4F7F;&#x7528; SSL(Secure Sockets Layer,&#x5B89;&#x5168;&#x5957;&#x63A5;&#x5C42;)&#x548C; TLS(Transport Layer Security,&#x4F20;&#x8F93;&#x5C42;&#x5B89;&#x5168;)&#x534F;&#x8BAE;&#x628A;&#x901A;&#x4FE1;&#x5185;&#x5BB9;
+&#x52A0;&#x5BC6;&#x540E;&#x7ECF;&#x7F51;&#x7EDC;&#x96A7;&#x9053;&#x4F20;&#x8F93;&#x3002;<strong>&#x4EC5;&#x652F;&#x6301; 1.1 &#x7248;&#x672C; &#x3002;</strong></p>
+<h2 id="&#x72B6;&#x6001;&#x7801;"><a name="&#x72B6;&#x6001;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x72B6;&#x6001;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x72B6;&#x6001;&#x7801;</h2>
+<p><strong>1xx &#xFF0C;&#x4FE1;&#x606F;&#x6027;&#x72B6;&#x6001;&#x7801; </strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x72B6;&#x6001;&#x7801;</th>
+<th style="text-align:center">&#x539F;&#x56E0;&#x77ED;&#x8BED;</th>
+<th style="text-align:center">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:center">Continue</td>
+<td style="text-align:center">&#x6536;&#x5230;&#x4E86;&#x8BF7;&#x6C42;&#x7684;&#x8D77;&#x59CB;&#x90E8;&#x5206;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x5E94;&#x8BE5;&#x7EE7;&#x7EED;&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td style="text-align:center">101</td>
+<td style="text-align:center">Switching Protocols</td>
+<td style="text-align:center">&#x670D;&#x52A1;&#x7AEF;&#x6B63;&#x6839;&#x636E;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x6307;&#x793A;&#x5C06;&#x534F;&#x8BAE;&#x5207;&#x6362;&#x6210; Update &#x9996;&#x90E8;&#x5217;&#x51FA;&#x7684;&#x534F;&#x8BAE;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2xx&#xFF0C;&#x6210;&#x529F;&#x72B6;&#x6001;&#x7801;</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x72B6;&#x6001;&#x7801;</th>
+<th style="text-align:center">&#x539F;&#x56E0;&#x77ED;&#x8BED;</th>
+<th style="text-align:center">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">200</td>
+<td style="text-align:center">OK</td>
+<td style="text-align:center">&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x6210;&#x529F;&#x5904;&#x7406;&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td style="text-align:center">201</td>
+<td style="text-align:center">Created</td>
+<td style="text-align:center">&#x5BF9;&#x90A3;&#x4E9B;&#x8981;&#x670D;&#x52A1;&#x5668;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x8BF7;&#x6C42;&#x6765;&#x8BF4;&#xFF0C;&#x8D44;&#x6E90;&#x5DF2;&#x521B;&#x5EFA;&#x5B8C;&#x6BD5;</td>
+</tr>
+<tr>
+<td style="text-align:center">202</td>
+<td style="text-align:center">Accepted</td>
+<td style="text-align:center">&#x8BF7;&#x6C42;&#x5DF2;&#x63A5;&#x53D7;&#xFF0C;&#x4F46;&#x670D;&#x52A1;&#x5668;&#x5C1A;&#x672A;&#x5904;&#x7406;</td>
+</tr>
+<tr>
+<td style="text-align:center">203</td>
+<td style="text-align:center">Non-Authoritative Information</td>
+<td style="text-align:center">&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x5C06;&#x4E8B;&#x52A1;&#x6210;&#x529F;&#x5904;&#x7406;&#xFF0C;&#x53EA;&#x662F;&#x5B9E;&#x4F53;&#x9996;&#x90E8;&#x5305;&#x542B;&#x7684;&#x4FE1;&#x606F;&#x4E0D;&#x662F;&#x6765;&#x539F;&#x59CB;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x800C;&#x662F;&#x6765;&#x81EA;&#x8D44;&#x6E90;&#x7684;&#x526F;&#x672C;</td>
+</tr>
+<tr>
+<td style="text-align:center">204</td>
+<td style="text-align:center">No Content</td>
+<td style="text-align:center">&#x54CD;&#x5E94;&#x62A5;&#x6587;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x9996;&#x90E8;&#x548C;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x884C;&#xFF0C;&#x4F46;&#x4E0D;&#x5305;&#x542B;&#x5B9E;&#x4F53;&#x7684;&#x4E3B;&#x4F53;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td style="text-align:center">205</td>
+<td style="text-align:center">Reset Content</td>
+<td style="text-align:center">&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#xFF0C;&#x610F;&#x601D;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x5E94;&#x8BE5;&#x91CD;&#x7F6E;&#x5F53;&#x524D;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x6240;&#x6709; HTML &#x8868;&#x5355;</td>
+</tr>
+<tr>
+<td style="text-align:center">206</td>
+<td style="text-align:center">Partial Content</td>
+<td style="text-align:center">&#x90E8;&#x5206;&#x8BF7;&#x6C42;&#x6210;&#x529F;</td>
+</tr>
+</tbody>
+</table>
+<p>206 &#x8868;&#x793A;&#x5BA2;&#x6237;&#x7AEF;&#x8FDB;&#x884C;&#x4E86;&#x8303;&#x56F4;&#x8BF7;&#x6C42;&#xFF0C;&#x800C;&#x670D;&#x52A1;&#x5668;&#x6210;&#x529F;&#x6267;&#x884C;&#x4E86;&#x8FD9;&#x90E8;&#x5206;&#x7684; GET &#x8BF7;&#x6C42;&#x3002;&#x54CD;&#x5E94;&#x62A5;&#x6587;&#x4E2D;&#x5305;&#x542B;&#x7531; Content-Range &#x6307;&#x5B9A;&#x8303;&#x56F4;&#x7684;&#x5B9E;&#x4F53;&#x5185;&#x5BB9;&#x3002;</p>
+<p><strong>3xx&#xFF0C;&#x91CD;&#x5B9A;&#x5411;&#x72B6;&#x6001;&#x7801;</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x72B6;&#x6001;&#x7801;</th>
+<th style="text-align:center">&#x539F;&#x56E0;&#x77ED;&#x8BED;</th>
+<th style="text-align:center">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">300</td>
+<td style="text-align:center">Multiple Choices</td>
+<td style="text-align:center">&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x4E00;&#x4E2A;&#x5B9E;&#x9645;&#x6307;&#x5411;&#x591A;&#x4E2A;&#x8D44;&#x6E90;&#x7684; URL &#x65F6;&#x4F1A;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x4EE3;&#x7801;&#x548C;&#x4E00;&#x4E2A;&#x9009;&#x9879;&#x8868;&#x4E00;&#x8D77;&#x8FD4;&#x56DE;&#xFF0C;&#x4F9B;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x9009;&#x62E9;</td>
+</tr>
+<tr>
+<td style="text-align:center">301</td>
+<td style="text-align:center">Moved Permanently</td>
+<td style="text-align:center">&#x6C38;&#x4E45;&#x6027;&#x91CD;&#x5B9A;&#x5411;&#x3002;&#x8BF7;&#x6C42;&#x7684; URL &#x5DF2;&#x79FB;&#x8D70;&#xFF0C;&#x54CD;&#x5E94;&#x7684; Location &#x9996;&#x90E8;&#x5E94;&#x8BE5;&#x5305;&#x542B;&#x8D44;&#x6E90;&#x73B0;&#x5728;&#x7684; URL</td>
+</tr>
+<tr>
+<td style="text-align:center">302</td>
+<td style="text-align:center">Found</td>
+<td style="text-align:center">&#x4E34;&#x65F6;&#x91CD;&#x5B9A;&#x5411;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x5E94;&#x8BE5;&#x4F7F;&#x7528; Location &#x9996;&#x90E8;&#x7ED9;&#x51FA;&#x7684; URL &#x6765;&#x4E34;&#x65F6;&#x5B9A;&#x4F4D;&#x8D44;&#x6E90;&#xFF0C;&#x5C06;&#x6765;&#x7684;&#x8BF7;&#x6C42;&#x4ECD;&#x5E94;&#x4F7F;&#x7528;&#x8001;&#x7684; URL</td>
+</tr>
+<tr>
+<td style="text-align:center">303</td>
+<td style="text-align:center">See Other</td>
+<td style="text-align:center">&#x7531;&#x4E8E;&#x8BF7;&#x6C42;&#x5BF9;&#x5E94;&#x7684;&#x8D44;&#x6E90;&#x5B58;&#x5728;&#x7740;&#x53E6;&#x4E00;&#x4E2A; URL&#xFF0C;&#x5E94;&#x4F7F;&#x7528; GET &#x65B9;&#x6CD5;&#x5B9A;&#x5411;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x7684;&#x8D44;&#x6E90;</td>
+</tr>
+<tr>
+<td style="text-align:center">304</td>
+<td style="text-align:center">Not Modified</td>
+<td style="text-align:center">&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x9644;&#x5E26;&#x6761;&#x4EF6;&#x7684;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8D44;&#x6E90;&#x672A;&#x6539;&#x53D8;&#xFF0C;&#x53EF;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5BA2;&#x6237;&#x7AEF;&#x672A;&#x8FC7;&#x671F;&#x7684;&#x7F13;&#x5B58;</td>
+</tr>
+<tr>
+<td style="text-align:center">305</td>
+<td style="text-align:center">Use Proxy</td>
+<td style="text-align:center">&#x5FC5;&#x987B;&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x6765;&#x8BBF;&#x95EE;&#x8D44;&#x6E90;&#xFF0C;&#x4EE3;&#x7406;&#x7684;&#x4F4D;&#x7F6E;&#x7531; Location &#x9996;&#x90E8;&#x7ED9;&#x51FA;</td>
+</tr>
+<tr>
+<td style="text-align:center">307</td>
+<td style="text-align:center">Temporary Redirect</td>
+<td style="text-align:center">&#x4E34;&#x65F6;&#x91CD;&#x5B9A;&#x5411;&#xFF0C;&#x4E0E; 302 &#x6709;&#x76F8;&#x540C;&#x7684;&#x542B;&#x4E49;</td>
+</tr>
+</tbody>
+</table>
+<p>304 &#x4E2D;&#x9644;&#x5E26;&#x6761;&#x4EF6;&#x7684;&#x8BF7;&#x6C42;&#x662F;&#x6307;&#x91C7;&#x7528; <strong>GET</strong> &#x65B9;&#x6CD5;&#x7684;&#x8BF7;&#x6C42;&#x62A5;&#x6587;&#x4E2D;&#x5305;&#x542B; <strong>If-Match</strong> &#xFF0C;<strong>If-Modified-Since</strong> &#xFF0C;<strong>If-None-Match</strong>&#xFF0C;<strong>If-Range</strong>&#xFF0C;<strong>If-Unmodified-Since</strong> &#x4E2D;&#x4EFB;&#x4E00;&#x9996;&#x90E8;&#x3002;  </p>
+<p>&#x5BF9;&#x4E8E; HTTP/1.1 &#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x7528; 307 &#x72B6;&#x6001;&#x7801;&#x53D6;&#x4EE3; 302 &#x72B6;&#x6001;&#x7801;&#x8FDB;&#x884C;&#x4E34;&#x65F6;&#x91CD;&#x5B9A;&#x5411;&#xFF0C;307 &#x4F1A;&#x9075;&#x7167;&#x6D4F;&#x89C8;&#x5668;&#x6807;&#x51C6;&#xFF0C;&#x4E0D;&#x4F1A;&#x4ECE; POST &#x53D8;&#x6210; GET&#x3002;&#x8FD9;&#x6837;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x4EE5;&#x5C06; 302 &#x72B6;&#x6001;&#x7801;&#x4FDD;&#x7559;&#x8D77;&#x6765;&#xFF0C;&#x4E3A; HTTP/1.0 &#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528;&#x3002;&#x5F88;&#x591A;&#x73B0;&#x5B58;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5C06; 302 &#x54CD;&#x5E94;&#x89C6;&#x4E3A; 303 &#x54CD;&#x5E94;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x7528; GET &#x65B9;&#x6CD5;&#x8BBF;&#x95EE;&#x5728; Location &#x4E2D;&#x89C4;&#x5B9A;&#x7684; URL&#xFF0C;&#x800C;&#x65E0;&#x89C6;&#x539F;&#x6765;&#x7684;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#x3002;</p>
+<p><strong>4xx&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x9519;&#x8BEF;&#x72B6;&#x6001;&#x7801;</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x72B6;&#x6001;&#x7801;</th>
+<th style="text-align:center">&#x539F;&#x56E0;&#x77ED;&#x8BED;</th>
+<th style="text-align:center">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">400</td>
+<td style="text-align:center">Bad Request</td>
+<td style="text-align:center">&#x8BF7;&#x6C42;&#x62A5;&#x6587;&#x4E2D;&#x5B58;&#x5728;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td style="text-align:center">401</td>
+<td style="text-align:center">Unauthorized</td>
+<td style="text-align:center">&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x83B7;&#x53D6;&#x8D44;&#x6E90;&#x8BBF;&#x95EE;&#x6743;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;&#x3002;&#x54CD;&#x5E94;&#x4E2D;&#x5FC5;&#x987B;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x9002;&#x7528;&#x4E8E;&#x88AB;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x7684; WWW-Authenticate &#x9996;&#x90E8;&#x7528;&#x4EE5;&#x8D28;&#x8BE2;&#x7528;&#x6237;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:center">402</td>
+<td style="text-align:center">Payment Required</td>
+<td style="text-align:center">&#x672A;&#x4F7F;&#x7528;&#xFF0C;&#x9884;&#x7559;</td>
+</tr>
+<tr>
+<td style="text-align:center">403</td>
+<td style="text-align:center">Forbidden</td>
+<td style="text-align:center">&#x8BF7;&#x6C42;&#x88AB;&#x670D;&#x52A1;&#x5668;&#x62D2;&#x7EDD;</td>
+</tr>
+<tr>
+<td style="text-align:center">404</td>
+<td style="text-align:center">Not Found</td>
+<td style="text-align:center">&#x670D;&#x52A1;&#x5668;&#x65E0;&#x6CD5;&#x627E;&#x5230;&#x8BF7;&#x6C42;&#x7684;&#x8D44;&#x6E90;</td>
+</tr>
+<tr>
+<td style="text-align:center">405</td>
+<td style="text-align:center">Method Not Allowed</td>
+<td style="text-align:center">&#x53D1;&#x8D77;&#x7684;&#x8BF7;&#x6C42;&#x4E2D;&#x5E26;&#x6709;&#x6240;&#x8BF7;&#x6C42;&#x7684; URL &#x4E0D;&#x652F;&#x6301;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x54CD;&#x5E94;&#x4E2D;&#x5E94;&#x5305;&#x542B; Allow &#x9996;&#x90E8;&#xFF0C;&#x4EE5;&#x544A;&#x8BC9;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x7684;&#x8D44;&#x6E90;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x54EA;&#x4E9B;&#x65B9;&#x6CD5;</td>
+</tr>
+<tr>
+<td style="text-align:center">406</td>
+<td style="text-align:center">Not Acceptable</td>
+<td style="text-align:center">&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E00;&#x4E9B;&#x53C2;&#x6570;&#x7231;&#x8BF4;&#x660E;&#x5E0C;&#x671B;&#x63A5;&#x53D7;&#x54EA;&#x4E9B;&#x7C7B;&#x578B;&#x7684;&#x5B9E;&#x4F53;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x6CA1;&#x6709;&#x8D44;&#x6E90;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x63A5;&#x53D7;&#x7684; URL &#x76F8;&#x5339;&#x914D;&#x65F6;&#x4F7F;&#x7528;&#x6B64;&#x72B6;&#x6001;&#x7801;</td>
+</tr>
+<tr>
+<td style="text-align:center">407</td>
+<td style="text-align:center">Proxy Authentication Required</td>
+<td style="text-align:center">&#x4E0E; 401 &#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x7528;&#x4E8E;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x8D44;&#x6E90;&#x8BA4;&#x8BC1;&#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;</td>
+</tr>
+<tr>
+<td style="text-align:center">408</td>
+<td style="text-align:center">Request Timeout</td>
+<td style="text-align:center">&#x5982;&#x679C;&#x5BA2;&#x6237;&#x7AEF;&#x5B8C;&#x6210;&#x5176;&#x8BF7;&#x6C42;&#x65F6;&#x82B1;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x592A;&#x957F;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x6B64;&#x72B6;&#x6001;&#x7801;&#x5173;&#x95ED;&#x8FDE;&#x63A5;</td>
+</tr>
+<tr>
+<td style="text-align:center">409</td>
+<td style="text-align:center">Conflict</td>
+<td style="text-align:center">&#x8BF7;&#x6C42;&#x53EF;&#x80FD;&#x5728;&#x8D44;&#x6E90;&#x4E0A;&#x5F15;&#x53D1;&#x4E00;&#x4E9B;&#x51B2;&#x7A81;&#x3002;&#x54CD;&#x5E94;&#x4E2D;&#x5E94;&#x8BE5;&#x5305;&#x542B;&#x63CF;&#x8FF0;&#x51B2;&#x7A81;&#x7684;&#x4E3B;&#x4F53;</td>
+</tr>
+<tr>
+<td style="text-align:center">410</td>
+<td style="text-align:center">Gone</td>
+<td style="text-align:center">&#x4E0E; 404 &#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x670D;&#x52A1;&#x5668;&#x66FE;&#x7ECF;&#x62E5;&#x6709;&#x8FC7;&#x6B64;&#x8D44;&#x6E90;</td>
+</tr>
+<tr>
+<td style="text-align:center">411</td>
+<td style="text-align:center">Length Required</td>
+<td style="text-align:center">&#x670D;&#x52A1;&#x5668;&#x8981;&#x6C42;&#x8BF7;&#x6C42;&#x62A5;&#x6587;&#x4E2D;&#x5305;&#x542B; Content-Length &#x9996;&#x90E8;</td>
+</tr>
+<tr>
+<td style="text-align:center">412</td>
+<td style="text-align:center">Precondition Failed</td>
+<td style="text-align:center">&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x8D77;&#x4E86;&#x6761;&#x4EF6;&#x8BF7;&#x6C42;&#xFF0C;&#x4E14;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x5931;&#x8D25;&#x4E86;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;</td>
+</tr>
+<tr>
+<td style="text-align:center">413</td>
+<td style="text-align:center">Request Enity Too Large</td>
+<td style="text-align:center">&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x7684;&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x90E8;&#x5206;&#x6BD4;&#x670D;&#x52A1;&#x5668;&#x80FD;&#x591F;&#x6216;&#x8005;&#x5E0C;&#x671B;&#x5904;&#x7406;&#x7684;&#x8981;&#x5927;</td>
+</tr>
+<tr>
+<td style="text-align:center">414</td>
+<td style="text-align:center">Request URI Too Long</td>
+<td style="text-align:center">&#x5BA2;&#x6237;&#x7AEF;&#x8BC9;&#x6240;&#x53D1;&#x8BF7;&#x6C42;&#x4E2D;&#x7684; URL &#x6BD4;&#x670D;&#x52A1;&#x5668;&#x80FD;&#x591F;&#x6216;&#x8005;&#x5E0C;&#x671B;&#x5904;&#x7406;&#x7684;&#x8981;&#x957F;</td>
+</tr>
+<tr>
+<td style="text-align:center">415</td>
+<td style="text-align:center">Unsupported Media Type</td>
+<td style="text-align:center">&#x670D;&#x52A1;&#x5668;&#x65E0;&#x6CD5;&#x7406;&#x89E3;&#x6216;&#x65E0;&#x6CD5;&#x652F;&#x6301;&#x5BA2;&#x6237;&#x7AEF;&#x6240;&#x53D1;&#x5B9E;&#x4F53;&#x7684;&#x5185;&#x5BB9;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td style="text-align:center">416</td>
+<td style="text-align:center">Requested Range Not Satisfiable</td>
+<td style="text-align:center">&#x8BF7;&#x6C42;&#x62A5;&#x6587;&#x6240;&#x8BF7;&#x6C42;&#x7684;&#x662F;&#x6307;&#x5B9A;&#x8D44;&#x6E90;&#x7684;&#x67D0;&#x4E2A;&#x8303;&#x56F4;&#xFF0C;&#x800C;&#x6B64;&#x8303;&#x56F4;&#x65E0;&#x6548;&#x6216;&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;</td>
+</tr>
+<tr>
+<td style="text-align:center">417</td>
+<td style="text-align:center">Expectation Failed</td>
+<td style="text-align:center">&#x8BF7;&#x6C42;&#x62A5;&#x6587;&#x7684; Expect &#x9996;&#x90E8;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E2A;&#x671F;&#x671B;&#xFF0C;&#x4F46;&#x670D;&#x52A1;&#x5668;&#x65E0;&#x6CD5;&#x6EE1;&#x8DB3;&#x6B64;&#x671F;&#x671B;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>5xx&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x9519;&#x8BEF;&#x72B6;&#x6001;&#x7801;</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x72B6;&#x6001;&#x7801;</th>
+<th style="text-align:center">&#x539F;&#x56E0;&#x77ED;&#x8BED;</th>
+<th style="text-align:center">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">500</td>
+<td style="text-align:center">Internal Server Error</td>
+<td style="text-align:center">&#x670D;&#x52A1;&#x5668;&#x5728;&#x6267;&#x884C;&#x8BF7;&#x6C42;&#x65F6;&#x53D1;&#x751F;&#x4E86;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td style="text-align:center">501</td>
+<td style="text-align:center">Not Implemented</td>
+<td style="text-align:center">&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x8D77;&#x7684;&#x8BF7;&#x6C42;&#x8D85;&#x51FA;&#x4E86;&#x670D;&#x52A1;&#x5668;&#x7684;&#x80FD;&#x529B;&#x8303;&#x56F4;&#xFF08;&#x6BD4;&#x5982;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:center">502</td>
+<td style="text-align:center">Bad Gateway</td>
+<td style="text-align:center">&#x4F5C;&#x4E3A;&#x4EE3;&#x7406;&#x6216;&#x7F51;&#x5173;&#x4F7F;&#x7528;&#x7684;&#x670D;&#x52A1;&#x5668;&#x9047;&#x5230;&#x4E86;&#x6765;&#x81EA;&#x54CD;&#x5E94;&#x94FE;&#x4E2D;&#x4E0A;&#x6E38;&#x7684;&#x65E0;&#x6548;&#x54CD;&#x5E94;</td>
+</tr>
+<tr>
+<td style="text-align:center">503</td>
+<td style="text-align:center">Service Unavailable</td>
+<td style="text-align:center">&#x670D;&#x52A1;&#x5668;&#x6682;&#x65F6;&#x65E0;&#x6CD5;&#x4E3A;&#x8BF7;&#x6C42;&#x63D0;&#x4F9B;&#x670D;&#x52A1;&#x3002;&#x5982;&#x679C;&#x4E8B;&#x5148;&#x5F97;&#x77E5;&#x6062;&#x590D;&#x9700;&#x8981;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x6700;&#x597D;&#x5199;&#x5165; Retry-After &#x9996;&#x90E8;&#x8FD4;&#x56DE;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;</td>
+</tr>
+<tr>
+<td style="text-align:center">504</td>
+<td style="text-align:center">Gateway Timeout</td>
+<td style="text-align:center">&#x4E0E; 408 &#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x662F;&#x8FD9;&#x91CC;&#x7684;&#x54CD;&#x5E94;&#x6765;&#x81EA;&#x4E00;&#x4E2A;&#x7F51;&#x5173;&#x6216;&#x8005;&#x4EE3;&#x7406;&#xFF0C;&#x5B83;&#x4EEC;&#x5728;&#x7B49;&#x5F85;&#x53E6;&#x4E00;&#x670D;&#x52A1;&#x5668;&#x5BF9;&#x5176;&#x8BF7;&#x6C42;&#x8FDB;&#x884C;&#x54CD;&#x5E94;&#x65F6;&#x8D85;&#x65F6;&#x4E86;</td>
+</tr>
+<tr>
+<td style="text-align:center">505</td>
+<td style="text-align:center">HTTP Version Not Supported</td>
+<td style="text-align:center">&#x670D;&#x52A1;&#x5668;&#x6536;&#x5230;&#x7684;&#x8BF7;&#x6C42;&#x4F7F;&#x7528;&#x4E86;&#x5B83;&#x65E0;&#x6CD5;&#x6216;&#x4E0D;&#x613F;&#x652F;&#x6301;&#x7684;&#x534F;&#x8BAE;&#x7248;&#x672C;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x62A5;&#x6587;&#x9996;&#x90E8;"><a name="&#x62A5;&#x6587;&#x9996;&#x90E8;" class="anchor-navigation-ex-anchor" href="#&#x62A5;&#x6587;&#x9996;&#x90E8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x62A5;&#x6587;&#x9996;&#x90E8;</h2>
+<p>HTTP &#x534F;&#x8BAE;&#x7684;&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#x62A5;&#x6587;&#x4E2D;&#x5FC5;&#x5B9A;&#x5305;&#x542B; HTTP &#x9996;&#x90E8;&#x3002;&#x9996;&#x90E8;&#x5185;&#x5BB9;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x5206;&#x522B;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#x63D0;&#x4F9B;&#x6240;&#x9700;&#x8981;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p>HTTP &#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x662F;&#x7531;&#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x540D;&#x548C;&#x5B57;&#x6BB5;&#x503C;&#x6784;&#x6210;&#x7684;,&#x4E2D;&#x95F4;&#x7528;&#x5192;&#x53F7;&#x201C;:&#x201D; &#x5206;&#x9694;&#x3002;</p>
+<blockquote>
+<p>&#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x540D;: &#x5B57;&#x6BB5;&#x503C;</p>
+</blockquote>
+<p>HTTP &#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x7528;&#x9014;&#x88AB;&#x5206;&#x4E3A;&#x4EE5;&#x4E0B; 4 &#x79CD;&#x7C7B;&#x578B;&#xFF1A;<strong>&#x901A;&#x7528;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</strong>&#xFF0C;<strong>&#x8BF7;&#x6C42;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</strong>&#xFF0C;<strong>&#x54CD;&#x5E94;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</strong>&#xFF0C;<strong>&#x5B9E;&#x4F53;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</strong> &#x3002;</p>
+<h3 id="&#x901A;&#x7528;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><a name="&#x901A;&#x7528;&#x9996;&#x90E8;&#x5B57;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x901A;&#x7528;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x901A;&#x7528;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x540D;</th>
+<th style="text-align:center">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Cache-Control</td>
+<td style="text-align:center">&#x63A7;&#x5236;&#x7F13;&#x5B58;&#x7684;&#x884C;&#x4E3A;</td>
+</tr>
+<tr>
+<td style="text-align:center">Connection</td>
+<td style="text-align:center">&#x9010;&#x8DF3;&#x9996;&#x90E8;&#x3001;&#x8FDE;&#x63A5;&#x7684;&#x7BA1;&#x7406;</td>
+</tr>
+<tr>
+<td style="text-align:center">Date</td>
+<td style="text-align:center">&#x521B;&#x5EFA;&#x62A5;&#x6587;&#x7684;&#x65E5;&#x671F;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td style="text-align:center">Pragma</td>
+<td style="text-align:center">&#x62A5;&#x6587;&#x6307;&#x4EE4;</td>
+</tr>
+<tr>
+<td style="text-align:center">Trailer</td>
+<td style="text-align:center">&#x62A5;&#x6587;&#x672B;&#x7AEF;&#x7684;&#x9996;&#x90E8;&#x4E00;&#x89C8;</td>
+</tr>
+<tr>
+<td style="text-align:center">Transfer-Encoding</td>
+<td style="text-align:center">&#x6307;&#x5B9A;&#x62A5;&#x6587;&#x4E3B;&#x4F53;&#x7684;&#x4F20;&#x8F93;&#x7F16;&#x7801;&#x65B9;&#x5F0F;</td>
+</tr>
+<tr>
+<td style="text-align:center">Upgrade</td>
+<td style="text-align:center">&#x5347;&#x7EA7;&#x4E3A;&#x5176;&#x4ED6;&#x534F;&#x8BAE;</td>
+</tr>
+<tr>
+<td style="text-align:center">Via</td>
+<td style="text-align:center">&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:center">Warning</td>
+<td style="text-align:center">&#x9519;&#x8BEF;&#x901A;&#x77E5;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="cache-control"><a name="cache-control" class="anchor-navigation-ex-anchor" href="#cache-control"><i class="fa fa-link" aria-hidden="true"></i></a>Cache-Control</h4>
+<p>&#x63A7;&#x5236;&#x7F13;&#x5B58;&#x7684;&#x5DE5;&#x4F5C;&#x673A;&#x5236;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x6307;&#x4EE4;</th>
+<th style="text-align:center">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">public</td>
+<td style="text-align:center">&#x5176;&#x4ED6;&#x7528;&#x6237;&#x4E5F;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x7F13;&#x5B58;</td>
+</tr>
+<tr>
+<td style="text-align:center">private</td>
+<td style="text-align:center">&#x5BF9;&#x7279;&#x5B9A;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x8D44;&#x6E90;&#x7F13;&#x5B58;&#x670D;&#x52A1;</td>
+</tr>
+<tr>
+<td style="text-align:center">no-cache</td>
+<td style="text-align:center">&#x5E76;&#x4E0D;&#x662F;&#x4E0D;&#x7F13;&#x5B58;&#xFF0C;&#x7F13;&#x5B58;&#x4F1A;&#x5411;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x6709;&#x6548;&#x671F;&#x786E;&#x8BA4;&#x540E;&#x5904;&#x7406;&#x8D44;&#x6E90;&#xFF0C;&#x9632;&#x6B62;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x8FD4;&#x56DE;&#x8FC7;&#x671F;&#x7684;&#x8D44;&#x6E90;</td>
+</tr>
+<tr>
+<td style="text-align:center">no-store</td>
+<td style="text-align:center">&#x4E0D;&#x7F13;&#x5B58;&#xFF0C;&#x6697;&#x793A;&#x8BF7;&#x6C42;&#x6216;&#x54CD;&#x5E94;&#x4E2D;&#x5305;&#x542B;&#x673A;&#x5BC6;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:center">max-age = [&#x79D2;]</td>
+<td style="text-align:center">&#x5F53;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x7684;&#x8BF7;&#x6C42;&#x4E2D;&#x5305;&#x542B; max-age &#x6307;&#x4EE4;&#x65F6;,&#x5982;&#x679C;&#x5224;&#x5B9A;&#x7F13;&#x5B58;&#x8D44;&#x6E90;&#x7684;&#x7F13;&#x5B58;&#x65F6;&#x95F4;&#x6570;&#x503C;&#x6BD4;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x7684;&#x6570;&#x503C;&#x66F4;&#x5C0F;,&#x90A3;&#x4E48;&#x5BA2;&#x6237;&#x7AEF;&#x5C31;&#x63A5;&#x6536;&#x7F13;&#x5B58;&#x7684;&#x8D44;&#x6E90;&#x3002;&#x53E6;&#x5916;,&#x5F53;&#x6307;&#x5B9A; max-age &#x503C;&#x4E3A; 0,&#x90A3;&#x4E48;&#x7F13;&#x5B58;&#x670D;&#x52A1;&#x5668;&#x901A;&#x5E38;&#x9700;&#x8981;&#x5C06;&#x8BF7;&#x6C42;&#x8F6C;&#x53D1;&#x7ED9;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x3002;<br>&#x5F53;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x4E2D;&#x5305;&#x542B; max-age &#x6307;&#x4EE4;&#x65F6;,&#x7F13;&#x5B58;&#x670D;&#x52A1;&#x5668;&#x5C06;&#x4E0D;&#x5BF9;&#x8D44;&#x6E90;&#x7684;&#x6709;&#x6548;&#x6027;&#x518D;&#x4F5C;&#x786E;&#x8BA4;,&#x800C; max-age &#x6570;&#x503C;&#x4EE3;&#x8868;&#x8D44;&#x6E90;&#x4FDD;&#x5B58;&#x4E3A;&#x7F13;&#x5B58;&#x7684;&#x6700;&#x957F;&#x65F6;&#x95F4;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:center">min-fresh = [&#x79D2;]</td>
+<td style="text-align:center">&#x8981;&#x6C42;&#x7F13;&#x5B58;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x81F3;&#x5C11;&#x8FD8;&#x672A;&#x8FC7;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x7684;&#x7F13;&#x5B58;&#x8D44;&#x6E90;&#x3002;&#x5F53;&#x6307;&#x5B9A; min-fresh &#x4E3A; 60 &#x79D2;&#x540E;,&#x8FC7;&#x4E86; 60 &#x79D2;&#x7684;&#x8D44;&#x6E90;&#x90FD;&#x65E0;&#x6CD5;&#x4F5C;&#x4E3A;&#x54CD;&#x5E94;&#x8FD4;&#x56DE;&#x4E86;</td>
+</tr>
+<tr>
+<td style="text-align:center">max-stale = [&#x79D2;]</td>
+<td style="text-align:center">&#x5982;&#x679C;&#x6307;&#x4EE4;&#x672A;&#x6307;&#x5B9A;&#x53C2;&#x6570;&#x503C;,&#x90A3;&#x4E48;&#x65E0;&#x8BBA;&#x7ECF;&#x8FC7;&#x591A;&#x4E45;,&#x5BA2;&#x6237;&#x7AEF;&#x90FD;&#x4F1A;&#x63A5;&#x6536;&#x54CD;&#x5E94;; &#x5982;&#x679C;&#x6307;&#x4EE4;&#x4E2D;&#x6307;&#x5B9A;&#x4E86;&#x5177;&#x4F53;&#x6570;&#x503C;,&#x90A3;&#x4E48;&#x5373;&#x4F7F;&#x8FC7;&#x671F;,&#x53EA;&#x8981;&#x4ECD;&#x5904;&#x4E8E; max-stale &#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x5185;,&#x4ECD;&#x65E7;&#x4F1A;&#x88AB;&#x5BA2;&#x6237;&#x7AEF;&#x63A5;&#x6536;&#x3002;</td>
+</tr>
+<tr>
+<td style="text-align:center">only-if-cached</td>
+<td style="text-align:center">&#x53EA;&#x6709;&#x7F13;&#x5B58;&#x4E2D;&#x6709;&#x526F;&#x672C;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x624D;&#x4F1A;&#x83B7;&#x53D6;&#x4E00;&#x4EFD;&#x526F;&#x672C;</td>
+</tr>
+<tr>
+<td style="text-align:center">must-revalidate</td>
+<td style="text-align:center">&#x4EE3;&#x7406;&#x4F1A;&#x5411;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x518D;&#x6B21;&#x9A8C;&#x8BC1;&#x5373;&#x5C06;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x7F13;&#x5B58;&#x76EE;&#x524D;&#x662F;&#x5426;&#x4ECD;&#x7136;&#x6709;&#x6548;</td>
+</tr>
+<tr>
+<td style="text-align:center">proxy-revalidate</td>
+<td style="text-align:center">&#x8981;&#x6C42;&#x6240;&#x6709;&#x7684;&#x7F13;&#x5B58;&#x670D;&#x52A1;&#x5668;&#x5728;&#x63A5;&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x5E26;&#x6709;&#x8BE5;&#x6307;&#x4EE4;&#x7684;&#x8BF7;&#x6C42;&#x8FD4;&#x56DE;&#x54CD;&#x5E94;&#x4E4B;&#x524D;,&#x5FC5;&#x987B;&#x518D;&#x6B21;&#x9A8C;&#x8BC1;&#x7F13;&#x5B58;&#x7684;&#x6709;&#x6548;&#x6027;</td>
+</tr>
+<tr>
+<td style="text-align:center">no-transform</td>
+<td style="text-align:center">&#x65E0;&#x8BBA;&#x662F;&#x5728;&#x8BF7;&#x6C42;&#x8FD8;&#x662F;&#x54CD;&#x5E94;&#x4E2D;,&#x7F13;&#x5B58;&#x90FD;&#x4E0D;&#x80FD;&#x6539;&#x53D8;&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x7684;&#x5A92;&#x4F53;&#x7C7B;&#x578B;&#x3002;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x7F13;&#x5B58;&#x6216;&#x4EE3;&#x7406;&#x538B;&#x7F29;&#x56FE;&#x7247;&#x7B49;&#x7C7B;&#x4F3C;&#x64CD;&#x4F5C;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="connection"><a name="connection" class="anchor-navigation-ex-anchor" href="#connection"><i class="fa fa-link" aria-hidden="true"></i></a>Connection</h4>
+<p>Connection &#x9996;&#x90E8;&#x6709;&#x4E24;&#x4E2A;&#x4F5C;&#x7528;&#xFF0C;&#x63A7;&#x5236;&#x4E0D;&#x518D;&#x8F6C;&#x53D1;&#x7ED9;&#x4EE3;&#x7406;&#x7684;&#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x548C;&#x7BA1;&#x7406;&#x6301;&#x4E45;&#x8FDE;&#x63A5;&#x3002;</p>
+<p>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6536;&#x5230;&#x5E26;&#x6709; Connection &#x9996;&#x90E8;&#x7684;&#x62A5;&#x6587;&#x540E;&#xFF0C;&#x4F1A;&#x5220;&#x9664;&#x62A5;&#x6587;&#x4E2D;&#x6240;&#x6709;&#x5728; Connection &#x9996;&#x90E8;&#x5217;&#x8868;&#x4E2D;&#x51FA;&#x73B0;&#x8FC7;&#x7684;&#x9996;&#x90E8;&#x3002;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x4EE3;&#x7406;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#xFF0C;&#x8FD9;&#x6837;&#x670D;&#x52A1;&#x5668;&#x6216;&#x5176;&#x4ED6;&#x4EE3;&#x7406;&#x5C31;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E0D;&#x5E94;&#x4F20;&#x9012;&#x7684;&#x9010;&#x8DF3;&#x9996;&#x90E8;&#x4E86;&#x3002;</p>
+<p>HTTP/1.1 &#x7248;&#x672C;&#x7684;&#x9ED8;&#x8BA4;&#x8FDE;&#x63A5;&#x90FD;&#x662F;&#x6301;&#x4E45;&#x8FDE;&#x63A5;&#x3002;&#x4E3A;&#x6B64;, &#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x5728;&#x6301;&#x4E45;&#x8FDE;&#x63A5;&#x4E0A;&#x8FDE;&#x7EED;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x3002;&#x5F53;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x60F3;&#x660E;&#x786E;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x65F6;,&#x5219;&#x6307;&#x5B9A; Connection &#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x4E3A; <strong>Close</strong> &#x3002;</p>
+<p>HTTP/1.1 &#x4E4B;&#x524D;&#x7684; HTTP &#x7248;&#x672C;&#x7684;&#x9ED8;&#x8BA4;&#x8FDE;&#x63A5;&#x90FD;&#x662F;&#x975E;&#x6301;&#x4E45;&#x8FDE;&#x63A5;&#x3002;&#x4E3A;&#x6B64;, &#x5982;&#x679C;&#x60F3;&#x5728;&#x65E7;&#x7248;&#x672C;&#x7684; HTTP &#x534F;&#x8BAE;&#x4E0A;&#x7EF4;&#x6301;&#x6301;&#x7EED;&#x8FDE;&#x63A5;,&#x5219;&#x9700;&#x8981;&#x6307;&#x5B9A; Connection &#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x4E3A; <strong>Keep-Alive</strong> &#x3002;</p>
+<h4 id="date"><a name="date" class="anchor-navigation-ex-anchor" href="#date"><i class="fa fa-link" aria-hidden="true"></i></a>Date</h4>
+<p>&#x521B;&#x5EFA; HTTP &#x62A5;&#x6587;&#x7684;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;</p>
+<h4 id="pragma"><a name="pragma" class="anchor-navigation-ex-anchor" href="#pragma"><i class="fa fa-link" aria-hidden="true"></i></a>Pragma</h4>
+<p>Pragma &#x662F; HTTP/1.1 &#x4E4B;&#x524D;&#x7248;&#x672C;&#x7684;&#x5386;&#x53F2;&#x9057;&#x7559;&#x5B57;&#x6BB5;,&#x4EC5;&#x4F5C;&#x4E3A;&#x4E0E; HTTP/1.0 &#x7684;&#x5411;&#x540E;&#x517C;&#x5BB9;&#x800C;&#x5B9A;&#x4E49;&#x3002;&#x89C4;&#x8303;&#x5B9A;&#x4E49;&#x7684;&#x5F62;&#x5F0F;&#x552F;&#x4E00;,&#x5982;&#x4E0B;&#x6240;&#x793A; &#xFF1A;</p>
+<pre class="language-"><code>Pragma: no-cache
+</code></pre><p>&#x8868;&#x793A;&#x5BA2;&#x6237;&#x7AEF;&#x8981;&#x6C42;&#x6240;&#x6709;&#x7684;&#x4E2D;&#x95F4;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x8FD4;&#x56DE;&#x7F13;&#x5B58;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<h4 id="trailer"><a name="trailer" class="anchor-navigation-ex-anchor" href="#trailer"><i class="fa fa-link" aria-hidden="true"></i></a>Trailer</h4>
+<p>&#x5982;&#x679C;&#x62A5;&#x6587;&#x91C7;&#x7528;&#x4E86;&#x5206;&#x5757;&#x4F20;&#x8F93;&#x7F16;&#x7801;&#xFF08;chunked transfer encoding&#xFF09;&#x65B9;&#x5F0F;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Trailer &#x5217;&#x51FA;&#x4F4D;&#x4E8E;&#x62A5;&#x6587;&#x672B;&#x7AEF;&#x7684;&#x9996;&#x90E8;&#x3002;</p>
+<h4 id="transfer-encoding"><a name="transfer-encoding" class="anchor-navigation-ex-anchor" href="#transfer-encoding"><i class="fa fa-link" aria-hidden="true"></i></a>Transfer-Encoding</h4>
+<p>&#x89C4;&#x5B9A;&#x4E86;&#x4F20;&#x8F93;&#x62A5;&#x6587;&#x4E3B;&#x4F53;&#x65F6;&#x91C7;&#x7528;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x3002;HTTP/1.1 &#x7684;&#x4F20;&#x8F93;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x4EC5;&#x5BF9;&#x5206;&#x5757;&#x4F20;&#x8F93;&#x7F16;&#x7801;&#x6709;&#x6548;&#x3002;</p>
+<blockquote>
+<p>HTTP/1.1 200 OK
+Date: Tue, 03 Jul 2012 04:40:56 GMT
+Cache-Control: public, max-age=604800
+Content-Type: text/javascript; charset=utf-8
+Expires: Tue, 10 Jul 2012 04:40:56 GMT
+X-Frame-Options: DENY
+X-XSS-Protection: 1; mode=block
+Content-Encoding: gzip
+<strong>Transfer-Encoding: chunked</strong>
+Connection: keep-alive
+cf0    &#x2190;16&#x8FDB;&#x5236;(10&#x8FDB;&#x5236;&#x4E3A;3312)
+...3312&#x5B57;&#x8282;&#x5206;&#x5757;&#x6570;&#x636E;...
+392    &#x2190;16&#x8FDB;&#x5236;(10&#x8FDB;&#x5236;&#x4E3A;914)
+...914&#x5B57;&#x8282;&#x5206;&#x5757;&#x6570;&#x636E;...
+0</p>
+</blockquote>
+<p>&#x5206;&#x522B;&#x88AB;&#x5206;&#x6210; 3312 &#x5B57;&#x8282;&#x548C; 914 &#x5B57;&#x8282;&#x5927;&#x5C0F;&#x7684;&#x5206;&#x5757;&#x6570;&#x636E; &#x3002;</p>
+<h4 id="upgrade"><a name="upgrade" class="anchor-navigation-ex-anchor" href="#upgrade"><i class="fa fa-link" aria-hidden="true"></i></a>Upgrade</h4>
+<p>&#x7528;&#x4E8E;&#x68C0;&#x6D4B; HTTP &#x534F;&#x8BAE;&#x53CA;&#x5176;&#x4ED6;&#x534F;&#x8BAE;&#x662F;&#x5426;&#x53EF;&#x4F7F;&#x7528;&#x66F4;&#x9AD8;&#x7684;&#x7248;&#x672C;&#x8FDB;&#x884C;&#x901A;&#x4FE1;, &#x5176;&#x53C2;&#x6570;&#x503C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x5B8C;&#x5168;&#x4E0D;&#x540C;&#x7684;&#x901A;&#x4FE1;&#x534F;&#x8BAE;&#x3002;&#x5BF9;&#x4E8E;&#x9644;&#x6709;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Upgrade &#x7684;&#x8BF7;&#x6C42;,&#x670D;&#x52A1;&#x5668;&#x53EF;&#x7528; <strong>101 Switching Protocols</strong> &#x72B6;&#x6001;&#x7801;&#x4F5C;&#x4E3A;&#x54CD;&#x5E94;&#x8FD4;&#x56DE;&#x3002;</p>
+<h4 id="via"><a name="via" class="anchor-navigation-ex-anchor" href="#via"><i class="fa fa-link" aria-hidden="true"></i></a>Via</h4>
+<p>&#x4F7F;&#x7528;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Via &#x662F;&#x4E3A;&#x4E86;&#x8FFD;&#x8E2A;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#x62A5;&#x6587;&#x7684;&#x4F20;&#x8F93;&#x8DEF;&#x5F84;&#x3002;&#x62A5;&#x6587;&#x7ECF;&#x8FC7;&#x4EE3;&#x7406;&#x6216;&#x7F51;&#x5173;&#x65F6;, &#x4F1A;&#x5148;&#x5728;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Via &#x4E2D;&#x9644;&#x52A0;&#x8BE5;&#x670D;&#x52A1;&#x5668;&#x7684;&#x4FE1;&#x606F;, &#x7136;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;&#x3002;</p>
+<h4 id="warning"><a name="warning" class="anchor-navigation-ex-anchor" href="#warning"><i class="fa fa-link" aria-hidden="true"></i></a>Warning</h4>
+<p>HTTP/1.1 &#x7684; Warning &#x9996;&#x90E8;&#x662F;&#x4ECE; HTTP/1.0 &#x7684;&#x54CD;&#x5E94;&#x9996;&#x90E8;(Retry-After)&#x6F14;&#x53D8;&#x8FC7;&#x6765;&#x7684;&#x3002;&#x8BE5;&#x9996;&#x90E8;&#x901A;&#x5E38;&#x4F1A;&#x544A;&#x77E5;&#x7528;&#x6237;&#x4E00;&#x4E9B;&#x4E0E;&#x7F13;&#x5B58;&#x76F8;&#x5173;&#x7684;&#x95EE;&#x9898;&#x7684;&#x8B66;&#x544A;&#x3002;</p>
+<h3 id="&#x8BF7;&#x6C42;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><a name="&#x8BF7;&#x6C42;&#x9996;&#x90E8;&#x5B57;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x8BF7;&#x6C42;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BF7;&#x6C42;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept</td>
+<td>&#x7528;&#x6237;&#x4EE3;&#x7406;&#x53EF;&#x5904;&#x7406;&#x7684;&#x5A92;&#x4F53;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>Accept-Charset</td>
+<td>&#x4F18;&#x5148;&#x7684;&#x5B57;&#x7B26;&#x96C6;</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td>&#x4F18;&#x5148;&#x7684;&#x5185;&#x5BB9;&#x7F16;&#x7801;</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td>&#x4F18;&#x5148;&#x7684;&#x8BED;&#x8A00;(&#x81EA;&#x7136;&#x8BED;&#x8A00;)</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>Web&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>Expect</td>
+<td>&#x671F;&#x5F85;&#x670D;&#x52A1;&#x5668;&#x7684;&#x7279;&#x5B9A;&#x884C;&#x4E3A;</td>
+</tr>
+<tr>
+<td>From</td>
+<td>&#x7528;&#x6237;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x7BB1;&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>Host</td>
+<td>&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x6240;&#x5728;&#x670D;&#x52A1;&#x5668;</td>
+</tr>
+<tr>
+<td>If-Match</td>
+<td>&#x6BD4;&#x8F83;&#x5B9E;&#x4F53;&#x6807;&#x8BB0;(ETag)</td>
+</tr>
+<tr>
+<td>If-Modified-Since</td>
+<td>&#x6BD4;&#x8F83;&#x8D44;&#x6E90;&#x7684;&#x66F4;&#x65B0;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>If-None-Match</td>
+<td>&#x6BD4;&#x8F83;&#x5B9E;&#x4F53;&#x6807;&#x8BB0;(&#x4E0E; If-Match &#x76F8;&#x53CD;)</td>
+</tr>
+<tr>
+<td>If-Range</td>
+<td>&#x8D44;&#x6E90;&#x672A;&#x66F4;&#x65B0;&#x65F6;&#x53D1;&#x9001;&#x5B9E;&#x4F53; Byte &#x7684;&#x8303;&#x56F4;&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td>If-Unmodified-Since</td>
+<td>&#x6BD4;&#x8F83;&#x8D44;&#x6E90;&#x7684;&#x66F4;&#x65B0;&#x65F6;&#x95F4;(&#x4E0E;If-Modified-Since&#x76F8;&#x53CD;)</td>
+</tr>
+<tr>
+<td>Max-Forwards</td>
+<td>&#x6700;&#x5927;&#x4F20;&#x8F93;&#x9010;&#x8DF3;&#x6570;</td>
+</tr>
+<tr>
+<td>Proxy-Authorization</td>
+<td>&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x8981;&#x6C42;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>&#x5B9E;&#x4F53;&#x7684;&#x5B57;&#x8282;&#x8303;&#x56F4;&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td>Referer</td>
+<td>&#x5BF9;&#x8BF7;&#x6C42;&#x4E2D; URI &#x7684;&#x539F;&#x59CB;&#x83B7;&#x53D6;&#x65B9;</td>
+</tr>
+<tr>
+<td>TE</td>
+<td>&#x4F20;&#x8F93;&#x7F16;&#x7801;&#x7684;&#x4F18;&#x5148;&#x7EA7;</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>HTTP &#x5BA2;&#x6237;&#x7AEF;&#x7A0B;&#x5E8F;&#x7684;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="accept"><a name="accept" class="anchor-navigation-ex-anchor" href="#accept"><i class="fa fa-link" aria-hidden="true"></i></a>Accept</h4>
+<p>&#x901A;&#x77E5;&#x670D;&#x52A1;&#x5668;, &#x7528;&#x6237;&#x4EE3;&#x7406;&#x80FD;&#x591F;&#x5904;&#x7406;&#x7684;&#x5A92;&#x4F53;&#x7C7B;&#x578B;&#x53CA;&#x5A92;&#x4F53;&#x7C7B;&#x578B;&#x7684;&#x76F8;&#x5BF9;&#x4F18;&#x5148;&#x7EA7;&#x3002;</p>
+<pre class="language-"><code>Accept: text/html,application/xhtml+xml,application/xml;q=0
+</code></pre><p>q &#x8868;&#x793A;&#x6743;&#x91CD;&#x503C;&#xFF0C;&#x8303;&#x56F4;&#x662F; 0-1 (&#x53EF;&#x7CBE;&#x786E;&#x5230;&#x5C0F;&#x6570;&#x70B9;&#x540E; 3 &#x4F4D;) &#xFF0C;1 &#x4E3A;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 1 &#x3002;&#x5F53;&#x670D;&#x52A1;&#x5668;&#x63D0;&#x4F9B;&#x591A;&#x79CD;&#x5185;&#x5BB9;&#x65F6;,&#x5C06;&#x4F1A;&#x9996;&#x5148;&#x8FD4;&#x56DE;&#x6743;&#x91CD;&#x503C;&#x6700;&#x9AD8;&#x7684;&#x5A92;&#x4F53;&#x7C7B;&#x578B;&#x3002;</p>
+<h4 id="accept-charset"><a name="accept-charset" class="anchor-navigation-ex-anchor" href="#accept-charset"><i class="fa fa-link" aria-hidden="true"></i></a>Accept-Charset</h4>
+<p>&#x901A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x7528;&#x6237;&#x4EE3;&#x7406;&#x652F;&#x6301;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#x53CA;&#x5B57;&#x7B26;&#x96C6;&#x7684;&#x76F8;&#x5BF9;&#x4F18;&#x5148;&#x987A;&#x5E8F; &#x3002;</p>
+<pre class="language-"><code>Accept-Charset: iso-8859-5, unicode-1-1;q=0.8
+</code></pre><h4 id="accept-encoding"><a name="accept-encoding" class="anchor-navigation-ex-anchor" href="#accept-encoding"><i class="fa fa-link" aria-hidden="true"></i></a>Accept-Encoding</h4>
+<p>&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x7528;&#x6237;&#x4EE3;&#x7406;&#x652F;&#x6301;&#x7684;&#x5185;&#x5BB9;&#x7F16;&#x7801;&#x53CA;&#x5185;&#x5BB9;&#x7F16;&#x7801;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x987A;&#x5E8F;&#x3002;&#x5E38;&#x89C1;&#x5185;&#x5BB9;&#x7F16;&#x7801;&#xFF0C;<strong>gzip</strong>&#xFF0C;<strong>compress</strong>&#xFF0C;<strong>deflate</strong>&#xFF0C;<strong>identity</strong> &#x3002;&#x901A;&#x914D;&#x7B26; <code>*</code> &#x53F7;&#x53EF;&#x6307;&#x5B9A;&#x4EFB;&#x610F;&#x7684;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#x3002;</p>
+<h4 id="accept-language"><a name="accept-language" class="anchor-navigation-ex-anchor" href="#accept-language"><i class="fa fa-link" aria-hidden="true"></i></a>Accept-Language</h4>
+<p>&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x7528;&#x6237;&#x4EE3;&#x7406;&#x80FD;&#x591F;&#x5904;&#x7406;&#x7684;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x96C6;(&#x6307;&#x4E2D;&#x6587;&#x6216;&#x82F1;&#x6587;&#x7B49;),&#x4EE5;&#x53CA;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x96C6;&#x7684;&#x76F8;&#x5BF9;&#x4F18;&#x5148;&#x7EA7;&#x3002;</p>
+<pre class="language-"><code>Accept-Language: zh-cn,zh;q=0.7,en-us,en;q=0.3
+</code></pre><h4 id="authorization"><a name="authorization" class="anchor-navigation-ex-anchor" href="#authorization"><i class="fa fa-link" aria-hidden="true"></i></a>Authorization</h4>
+<p>&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;,&#x7528;&#x6237;&#x4EE3;&#x7406;&#x7684;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;(&#x8BC1;&#x4E66;&#x503C;)&#x3002;&#x901A;&#x5E38;,&#x60F3;&#x8981;&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x5668;&#x8BA4;&#x8BC1;&#x7684;&#x7528;&#x6237;&#x4EE3;&#x7406;&#x4F1A;&#x5728;&#x63A5;&#x6536;&#x5230;&#x8FD4;&#x56DE;&#x7684; 401 &#x72B6;&#x6001;&#x7801;&#x54CD;&#x5E94;&#x540E;,&#x628A;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Authorization &#x52A0;&#x5165;&#x8BF7;&#x6C42;&#x4E2D;&#x3002;</p>
+<pre class="language-"><code>Authorization: Basic dWVub3NlbjpwYXNzd29yZA==
+</code></pre><h4 id="expect"><a name="expect" class="anchor-navigation-ex-anchor" href="#expect"><i class="fa fa-link" aria-hidden="true"></i></a>Expect</h4>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Expect &#x6765;&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;,&#x671F;&#x671B;&#x51FA;&#x73B0;&#x7684;&#x67D0;&#x79CD;&#x7279;&#x5B9A;&#x884C;&#x4E3A;&#x3002;&#x56E0;&#x670D;&#x52A1;&#x5668;&#x65E0;&#x6CD5;&#x7406;&#x89E3;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x671F;&#x671B;&#x4F5C;&#x51FA;&#x56DE;&#x5E94;&#x800C;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;,&#x4F1A;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801; 417 Expectation Failed&#x3002;</p>
+<pre class="language-"><code>Expect: 100-continue
+</code></pre><h4 id="from"><a name="from" class="anchor-navigation-ex-anchor" href="#from"><i class="fa fa-link" aria-hidden="true"></i></a>From</h4>
+<p>&#x7528;&#x6765;&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x4F7F;&#x7528;&#x7528;&#x6237;&#x4EE3;&#x7406;&#x7684;&#x7528;&#x6237;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x5730;&#x5740;&#x3002;&#x901A;&#x5E38;, &#x5176;&#x4F7F;&#x7528;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x663E;&#x793A;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x7B49;&#x7528;&#x6237;&#x4EE3;&#x7406;&#x7684;&#x8D1F;&#x8D23;&#x4EBA;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x8054;&#x7CFB;&#x65B9;&#x5F0F;&#x3002;</p>
+<h4 id="host"><a name="host" class="anchor-navigation-ex-anchor" href="#host"><i class="fa fa-link" aria-hidden="true"></i></a>Host</h4>
+<p>&#x5355;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5206;&#x914D;&#x591A;&#x4E2A;&#x57DF;&#x540D;&#x7684;&#x865A;&#x62DF;&#x4E3B;&#x673A;&#x65F6;&#xFF0C;&#x5C31;&#x8981;&#x9760; Host &#x9996;&#x90E8;&#x52A0;&#x4EE5;&#x533A;&#x5206;&#x3002;</p>
+<pre class="language-"><code>Host: luyao.tech
+</code></pre><h4 id="if-match"><a name="if-match" class="anchor-navigation-ex-anchor" href="#if-match"><i class="fa fa-link" aria-hidden="true"></i></a>If-Match</h4>
+<p>&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x6BD4;&#x5BF9; If-Match &#x7684;&#x5B57;&#x6BB5;&#x503C;&#x548C;&#x8D44;&#x6E90;&#x7684; ETag &#x503C;, &#x4EC5;&#x5F53;&#x4E24;&#x8005;&#x4E00;&#x81F4;&#x65F6;, &#x624D;&#x4F1A;&#x6267;&#x884C;&#x8BF7;&#x6C42;&#x3002;&#x53CD;&#x4E4B;, &#x5219;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801; <strong>412 Precondition Failed</strong> &#x7684;&#x54CD;&#x5E94;&#x3002;</p>
+<h4 id="if-none-match"><a name="if-none-match" class="anchor-navigation-ex-anchor" href="#if-none-match"><i class="fa fa-link" aria-hidden="true"></i></a>If-None-Match</h4>
+<p>&#x7528;&#x4E8E;&#x6307;&#x5B9A; If-None-Match &#x5B57;&#x6BB5;&#x503C;&#x7684;&#x5B9E;&#x4F53;&#x6807;&#x8BB0;(ETag)&#x503C;&#x4E0E;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x7684; ETag &#x4E0D;&#x4E00;&#x81F4;&#x65F6;, &#x5B83;&#x5C31;&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x5904;&#x7406;&#x8BE5;&#x8BF7;&#x6C42;&#x3002;&#x4E0E; If-Match &#x6B63;&#x597D;&#x76F8;&#x53CD;&#x3002;</p>
+<h4 id="if-modified-since"><a name="if-modified-since" class="anchor-navigation-ex-anchor" href="#if-modified-since"><i class="fa fa-link" aria-hidden="true"></i></a>If-Modified-Since</h4>
+<p>&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x82E5; If-Modified-Since &#x5B57;&#x6BB5;&#x503C;&#x65E9;&#x4E8E;&#x8D44;&#x6E90;&#x7684;&#x66F4;&#x65B0;&#x65F6;&#x95F4;,&#x5219;&#x5E0C;&#x671B;&#x80FD;&#x5904;&#x7406;&#x8BE5;&#x8BF7;&#x6C42;&#x3002;&#x800C;&#x5728;&#x6307;&#x5B9A; If-Modified-Since &#x5B57;&#x6BB5;&#x503C;&#x7684;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x4E4B;&#x540E;, &#x5982;&#x679C;&#x8BF7;&#x6C42;&#x7684;&#x8D44;&#x6E90;&#x90FD;&#x6CA1;&#x6709;&#x8FC7;&#x66F4;&#x65B0;, &#x5219;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801; 304 Not Modified &#x7684;&#x54CD;&#x5E94;&#x3002;</p>
+<h4 id="if-unmodified-since"><a name="if-unmodified-since" class="anchor-navigation-ex-anchor" href="#if-unmodified-since"><i class="fa fa-link" aria-hidden="true"></i></a>If-Unmodified-Since</h4>
+<p>&#x6307;&#x5B9A;&#x7684;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x53EA;&#x6709;&#x5728; If-Unmodified-Since &#x5B57;&#x6BB5;&#x503C;&#x5185;&#x6307;&#x5B9A;&#x7684;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x4E4B;&#x540E;, &#x672A;&#x53D1;&#x751F;&#x66F4;&#x65B0;&#x7684;&#x60C5;&#x51B5;&#x4E0B;, &#x624D;&#x80FD;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x3002;&#x5982;&#x679C;&#x5728;&#x6307;&#x5B9A;&#x65E5;&#x671F;&#x65F6;&#x95F4;&#x540E;&#x53D1;&#x751F;&#x4E86;&#x66F4;&#x65B0;, &#x5219;&#x4EE5;&#x72B6;&#x6001;&#x7801; 412 Precondition Failed &#x4F5C;&#x4E3A;&#x54CD;&#x5E94;&#x8FD4;&#x56DE;&#x3002;&#x4E0E; If-Modified-Since &#x6B63;&#x597D;&#x76F8;&#x53CD;&#x3002;</p>
+<h4 id="if-range"><a name="if-range" class="anchor-navigation-ex-anchor" href="#if-range"><i class="fa fa-link" aria-hidden="true"></i></a>If-Range</h4>
+<p>&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x82E5;&#x6307;&#x5B9A;&#x7684; If-Range &#x5B57;&#x6BB5;&#x503C;(ETag &#x503C;&#x6216;&#x8005;&#x65F6;&#x95F4;)&#x548C;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x7684; ETag &#x503C;&#x6216;&#x65F6;&#x95F4;&#x76F8;&#x4E00;&#x81F4;&#x65F6;, &#x5219;&#x4F5C;&#x4E3A;&#x8303;&#x56F4;&#x8BF7;&#x6C42;&#x5904;&#x7406;&#x3002;&#x53CD;&#x4E4B;, &#x5219;&#x8FD4;&#x56DE;&#x5168;&#x4F53;&#x8D44;&#x6E90;&#x3002;</p>
+<h4 id="max-forwards"><a name="max-forwards" class="anchor-navigation-ex-anchor" href="#max-forwards"><i class="fa fa-link" aria-hidden="true"></i></a>Max-Forwards</h4>
+<p>&#x901A;&#x8FC7; TRACE &#x65B9;&#x6CD5;&#x6216; OPTIONS &#x65B9;&#x6CD5;,&#x53D1;&#x9001;&#x5305;&#x542B;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Max-Forwards &#x7684;&#x8BF7;&#x6C42;&#x65F6;,&#x8BE5;&#x5B57;&#x6BB5;&#x4EE5;&#x5341;&#x8FDB;&#x5236;&#x6574;&#x6570;&#x5F62;&#x5F0F;&#x6307;&#x5B9A;&#x53EF;&#x7ECF;&#x8FC7;&#x7684;&#x670D;&#x52A1;&#x5668;&#x6700;&#x5927;&#x6570;&#x76EE;&#x3002;&#x670D;&#x52A1;&#x5668;&#x5728;&#x5F80;&#x4E0B;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x8F6C;&#x53D1;&#x8BF7;&#x6C42;&#x4E4B;&#x524D;,Max-Forwards &#x7684;&#x503C;&#x51CF; 1 &#x540E;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#x3002;&#x5F53;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;&#x5230; Max-Forwards &#x503C;&#x4E3A; 0 &#x7684;&#x8BF7;&#x6C42;&#x65F6;, &#x5219;&#x4E0D;&#x518D;&#x8FDB;&#x884C;&#x8F6C;&#x53D1;, &#x800C;&#x662F;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x54CD;&#x5E94;&#x3002;</p>
+<pre class="language-"><code>Max-Forwards: 10
+</code></pre><h4 id="proxy-authorization"><a name="proxy-authorization" class="anchor-navigation-ex-anchor" href="#proxy-authorization"><i class="fa fa-link" aria-hidden="true"></i></a>Proxy-Authorization</h4>
+<p>&#x63A5;&#x6536;&#x5230;&#x4ECE;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x6765;&#x7684;&#x8BA4;&#x8BC1;&#x8D28;&#x8BE2;&#x65F6;,&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x53D1;&#x9001;&#x5305;&#x542B;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Proxy-Authorization &#x7684;&#x8BF7;&#x6C42;, &#x4EE5;&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x8BA4;&#x8BC1;&#x6240;&#x9700;&#x8981;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x884C;&#x4E3A;&#x662F;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x7684; HTTP &#x8BBF;&#x95EE;&#x8BA4;&#x8BC1;&#x76F8;&#x7C7B;&#x4F3C;&#x7684;,&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;, &#x8BA4;&#x8BC1;&#x884C;&#x4E3A;&#x53D1;&#x751F;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x4EE3;&#x7406;&#x4E4B;&#x95F4;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x8BA4;&#x8BC1;, &#x4F7F;&#x7528;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Authorization &#x53EF;&#x8D77;&#x5230;&#x76F8;&#x540C;&#x4F5C;&#x7528;&#x3002;</p>
+<h4 id="range"><a name="range" class="anchor-navigation-ex-anchor" href="#range"><i class="fa fa-link" aria-hidden="true"></i></a>Range</h4>
+<pre class="language-"><code>Range: bytes=5001-10000
+</code></pre><p>&#x5BF9;&#x4E8E;&#x53EA;&#x9700;&#x83B7;&#x53D6;&#x90E8;&#x5206;&#x8D44;&#x6E90;&#x7684;&#x8303;&#x56F4;&#x8BF7;&#x6C42;, &#x5305;&#x542B;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Range &#x5373;&#x53EF;&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x8D44;&#x6E90;&#x7684;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x3002;&#x4E0A;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x8868;&#x793A;&#x8BF7;&#x6C42;&#x83B7;&#x53D6;&#x4ECE;&#x7B2C; 5001 &#x5B57;&#x8282;&#x81F3;&#x7B2C;10000 &#x5B57;&#x8282;&#x7684;&#x8D44;&#x6E90;&#x3002;
+&#x63A5;&#x6536;&#x5230;&#x9644;&#x5E26; Range &#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x8BF7;&#x6C42;&#x7684;&#x670D;&#x52A1;&#x5668;,&#x4F1A;&#x5728;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x4E4B;&#x540E;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801;&#x4E3A; 206 Partial Content &#x7684;&#x54CD;&#x5E94;&#x3002;&#x65E0;&#x6CD5;&#x5904;&#x7406;&#x8BE5;&#x8303;&#x56F4;&#x8BF7;&#x6C42;&#x65F6;, &#x5219;&#x4F1A;&#x8FD4;&#x56DE;&#x72B6;&#x6001;&#x7801; 200 OK &#x7684;&#x54CD;&#x5E94;&#x53CA;&#x5168;&#x90E8;&#x8D44;&#x6E90;&#x3002;</p>
+<h4 id="referer"><a name="referer" class="anchor-navigation-ex-anchor" href="#referer"><i class="fa fa-link" aria-hidden="true"></i></a>Referer</h4>
+<p>&#x9996;&#x90E8;&#x5B57;&#x6BB5; Referer &#x4F1A;&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x8BF7;&#x6C42;&#x7684;&#x539F;&#x59CB;&#x8D44;&#x6E90;&#x7684; URI&#x3002;
+&#x5BA2;&#x6237;&#x7AEF;&#x4E00;&#x822C;&#x90FD;&#x4F1A;&#x53D1;&#x9001; Referer &#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x3002;&#x4F46;&#x5F53;&#x76F4;&#x63A5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5730;&#x5740;&#x680F;&#x8F93;&#x5165; URI, &#x6216;&#x51FA;&#x4E8E;&#x5B89;&#x5168;&#x6027;&#x7684;&#x8003;&#x8651;&#x65F6;, &#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x53D1;&#x9001;&#x8BE5;&#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x3002;</p>
+<pre class="language-"><code>Referer: http://www.hackr.jp/index.htm
+</code></pre><h4 id="te"><a name="te" class="anchor-navigation-ex-anchor" href="#te"><i class="fa fa-link" aria-hidden="true"></i></a>TE</h4>
+<p>&#x544A;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x5BA2;&#x6237;&#x7AEF;&#x80FD;&#x591F;&#x5904;&#x7406;&#x54CD;&#x5E94;&#x7684;&#x4F20;&#x8F93;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x53CA;&#x76F8;&#x5BF9;&#x4F18;&#x5148;&#x7EA7;&#x3002;&#x5B83;&#x548C;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Accept-Encoding &#x7684;&#x529F;&#x80FD;&#x5F88;&#x76F8;&#x50CF;, &#x4F46;&#x662F;&#x7528;&#x4E8E;&#x4F20;&#x8F93;&#x7F16;&#x7801;&#x3002;</p>
+<pre class="language-"><code>TE: gzip, deflate;q=0.5
+</code></pre><h4 id="user-agent"><a name="user-agent" class="anchor-navigation-ex-anchor" href="#user-agent"><i class="fa fa-link" aria-hidden="true"></i></a>User-Agent</h4>
+<p>&#x9996;&#x90E8;&#x5B57;&#x6BB5; User-Agent &#x4F1A;&#x5C06;&#x521B;&#x5EFA;&#x8BF7;&#x6C42;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x7528;&#x6237;&#x4EE3;&#x7406;&#x540D;&#x79F0;&#x7B49;&#x4FE1;&#x606F;&#x4F20;&#x8FBE;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
+<pre class="language-"><code>User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:13.0) Gecko/2010010
+</code></pre><h3 id="&#x54CD;&#x5E94;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><a name="&#x54CD;&#x5E94;&#x9996;&#x90E8;&#x5B57;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x54CD;&#x5E94;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x54CD;&#x5E94;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept-Ranges</td>
+<td>&#x662F;&#x5426;&#x63A5;&#x53D7;&#x5B57;&#x8282;&#x8303;&#x56F4;&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td>Age</td>
+<td>&#x63A8;&#x7B97;&#x8D44;&#x6E90;&#x521B;&#x5EFA;&#x7ECF;&#x8FC7;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>ETag</td>
+<td>&#x8D44;&#x6E90;&#x7684;&#x5339;&#x914D;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>&#x4EE4;&#x5BA2;&#x6237;&#x7AEF;&#x91CD;&#x5B9A;&#x5411;&#x81F3;&#x6307;&#x5B9A;URI</td>
+</tr>
+<tr>
+<td>Proxy-Authenticate</td>
+<td>&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x5BF9;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>Retry-After</td>
+<td>&#x5BF9;&#x518D;&#x6B21;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x673A;&#x8981;&#x6C42;</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>HTTP&#x670D;&#x52A1;&#x5668;&#x7684;&#x5B89;&#x88C5;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>Vary</td>
+<td>&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7F13;&#x5B58;&#x7684;&#x7BA1;&#x7406;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>WWW-Authenticate</td>
+<td>&#x670D;&#x52A1;&#x5668;&#x5BF9;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="accept-ranges"><a name="accept-ranges" class="anchor-navigation-ex-anchor" href="#accept-ranges"><i class="fa fa-link" aria-hidden="true"></i></a>Accept-Ranges</h4>
+<p>&#x7528;&#x6765;&#x544A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;&#x670D;&#x52A1;&#x5668;&#x662F;&#x5426;&#x80FD;&#x5904;&#x7406;&#x8303;&#x56F4;&#x8BF7;&#x6C42;, &#x4EE5;&#x6307;&#x5B9A;&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x67D0;&#x4E2A;&#x90E8;&#x5206;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x53EF;&#x6307;&#x5B9A;&#x7684;&#x5B57;&#x6BB5;&#x503C;&#x6709;&#x4E24;&#x79CD;, &#x53EF;&#x5904;&#x7406;&#x8303;&#x56F4;&#x8BF7;&#x6C42;&#x65F6;&#x6307;&#x5B9A;&#x5176;&#x4E3A; bytes, &#x53CD;&#x4E4B;&#x5219;&#x6307;&#x5B9A;&#x5176;&#x4E3A; none&#x3002;</p>
+<pre class="language-"><code>Accept-Ranges: bytes
+Accept-Ranges: none
+</code></pre><h4 id="age"><a name="age" class="anchor-navigation-ex-anchor" href="#age"><i class="fa fa-link" aria-hidden="true"></i></a>Age</h4>
+<p>&#x544A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x5728;&#x591A;&#x4E45;&#x524D;&#x521B;&#x5EFA;&#x4E86;&#x54CD;&#x5E94;&#x3002;&#x5B57;&#x6BB5;&#x503C;&#x7684;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;&#x3002;</p>
+<h4 id="etag"><a name="etag" class="anchor-navigation-ex-anchor" href="#etag"><i class="fa fa-link" aria-hidden="true"></i></a>ETag</h4>
+<p>&#x9996;&#x90E8;&#x5B57;&#x6BB5; ETag &#x80FD;&#x544A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;&#x5B9E;&#x4F53;&#x6807;&#x8BC6;&#x3002;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x53EF;&#x5C06;&#x8D44;&#x6E90;&#x4EE5;&#x5B57;&#x7B26;&#x4E32;&#x5F62;&#x5F0F;&#x505A;&#x552F;&#x4E00;&#x6027;&#x6807;&#x8BC6;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x670D;&#x52A1;&#x5668;&#x4F1A;&#x4E3A;&#x6BCF;&#x4EFD;&#x8D44;&#x6E90;&#x5206;&#x914D;&#x5BF9;&#x5E94;&#x7684; ETag &#x503C;&#x3002;&#x8D44;&#x6E90;&#x66F4;&#x65B0;&#x65F6;&#xFF0C;ETag &#x503C;&#x4E5F;&#x4F1A;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x3002;</p>
+<h4 id="location"><a name="location" class="anchor-navigation-ex-anchor" href="#location"><i class="fa fa-link" aria-hidden="true"></i></a>Location</h4>
+<p>&#x5C06;&#x54CD;&#x5E94;&#x63A5;&#x6536;&#x65B9;&#x5F15;&#x5BFC;&#x81F3;&#x67D0;&#x4E2A;&#x4E0E;&#x8BF7;&#x6C42; URI &#x4F4D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x8D44;&#x6E90;&#x3002;&#x57FA;&#x672C;&#x4E0A;&#x90FD;&#x662F;&#x914D;&#x5408; 3xx &#x91CD;&#x5B9A;&#x5411;&#x4F7F;&#x7528;&#x3002;</p>
+<h4 id="proxy-authenticate"><a name="proxy-authenticate" class="anchor-navigation-ex-anchor" href="#proxy-authenticate"><i class="fa fa-link" aria-hidden="true"></i></a>Proxy-Authenticate</h4>
+<p>&#x628A;&#x7531;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x6240;&#x8981;&#x6C42;&#x7684;&#x8BA4;&#x8BC1;&#x4FE1;&#x606F;&#x53D1;&#x9001;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x3002;</p>
+<p>&#x5B83;&#x4E0E;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x7684; HTTP &#x8BBF;&#x95EE;&#x8BA4;&#x8BC1;&#x7684;&#x884C;&#x4E3A;&#x76F8;&#x4F3C;, &#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x5176;&#x8BA4;&#x8BC1;&#x884C;&#x4E3A;&#x662F;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x4EE3;&#x7406;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x7684;&#x3002;&#x800C;&#x5BA2;&#x6237;&#x7AEF;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;&#x65F6;, &#x9996;&#x90E8;&#x5B57;&#x6BB5; WWW-Authorization &#x6709;&#x7740;&#x76F8;&#x540C;&#x7684;&#x4F5C;&#x7528;&#x3002;</p>
+<h4 id="retry-after"><a name="retry-after" class="anchor-navigation-ex-anchor" href="#retry-after"><i class="fa fa-link" aria-hidden="true"></i></a>Retry-After</h4>
+<p>&#x544A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;&#x5E94;&#x8BE5;&#x5728;&#x591A;&#x4E45;&#x4E4B;&#x540E;&#x518D;&#x6B21;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x3002;&#x4E3B;&#x8981;&#x914D;&#x5408;&#x72B6;&#x6001;&#x7801; 503 Service Unavailable &#x54CD;&#x5E94;, &#x6216; 3xx Redirect &#x54CD;&#x5E94;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x5B57;&#x6BB5;&#x503C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4E3A;&#x5177;&#x4F53;&#x7684;&#x65E5;&#x671F;&#x65F6;&#x95F4;(Wed, 04 Jul 2012 06:34:24 GMT &#x7B49;&#x683C;&#x5F0F;), &#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x521B;&#x5EFA;&#x54CD;&#x5E94;&#x540E;&#x7684;&#x79D2;&#x6570;&#x3002;</p>
+<h4 id="server"><a name="server" class="anchor-navigation-ex-anchor" href="#server"><i class="fa fa-link" aria-hidden="true"></i></a>Server</h4>
+<p>&#x544A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;&#x5F53;&#x524D;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x5B89;&#x88C5;&#x7684; HTTP &#x670D;&#x52A1;&#x5668;&#x5E94;&#x7528;&#x7A0B;
+&#x5E8F;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<pre class="language-"><code>Server: Apache/2.2.17 (Unix)
+</code></pre><h4 id="vary"><a name="vary" class="anchor-navigation-ex-anchor" href="#vary"><i class="fa fa-link" aria-hidden="true"></i></a>Vary</h4>
+<p>&#x5F53;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;&#x5230;&#x5E26;&#x6709; Vary &#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x6307;&#x5B9A;&#x83B7;&#x53D6;&#x8D44;&#x6E90;&#x7684;&#x8BF7;&#x6C42;&#x65F6;, &#x5982;&#x679C;&#x4F7F;&#x7528;&#x7684; Accept-Language &#x5B57;&#x6BB5;&#x7684;&#x503C;&#x76F8;&#x540C;, &#x90A3;&#x4E48;&#x5C31;&#x76F4;&#x63A5;&#x4ECE;&#x7F13;&#x5B58;&#x8FD4;&#x56DE;&#x54CD;&#x5E94;&#x3002;&#x53CD;&#x4E4B;, &#x9700;&#x8981;&#x5148;&#x4ECE;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x83B7;&#x53D6;&#x8D44;&#x6E90;&#x540E;&#x624D;&#x80FD;&#x4F5C;&#x4E3A;&#x54CD;&#x5E94;&#x8FD4;&#x56DE;&#x3002;</p>
+<pre class="language-"><code>Vary: Accept-Language
+</code></pre><h4 id="www-authenticate"><a name="www-authenticate" class="anchor-navigation-ex-anchor" href="#www-authenticate"><i class="fa fa-link" aria-hidden="true"></i></a>WWW-Authenticate</h4>
+<p>&#x7528;&#x4E8E; HTTP &#x8BBF;&#x95EE;&#x8BA4;&#x8BC1;&#x3002;&#x5B83;&#x4F1A;&#x544A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;&#x9002;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x8BF7;&#x6C42; URI &#x6240;&#x6307;&#x5B9A;&#x8D44;&#x6E90;&#x7684;&#x8BA4;&#x8BC1;&#x65B9;&#x6848;(Basic &#x6216;&#x662F; Digest)&#x548C;&#x5E26;&#x53C2;&#x6570;&#x63D0;&#x793A;&#x7684;&#x8D28;&#x8BE2;(challenge)&#x3002;&#x72B6;&#x6001;&#x7801; 401 Unauthorized &#x54CD;&#x5E94;&#x4E2D;, &#x80AF;&#x5B9A;&#x5E26;&#x6709;&#x9996;&#x90E8;&#x5B57;&#x6BB5; WWW-Authenticate&#x3002;</p>
+<pre class="language-"><code>WWW-Authenticate: Basic realm=&quot;Usagidesign Auth&quot;
+</code></pre><h3 id="&#x5B9E;&#x4F53;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><a name="&#x5B9E;&#x4F53;&#x9996;&#x90E8;&#x5B57;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x4F53;&#x9996;&#x90E8;&#x5B57;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x4F53;&#x9996;&#x90E8;&#x5B57;&#x6BB5;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allow</td>
+<td>&#x8D44;&#x6E90;&#x53EF;&#x652F;&#x6301;&#x7684;HTTP&#x65B9;&#x6CD5;</td>
+</tr>
+<tr>
+<td>Content-Encoding</td>
+<td>&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x9002;&#x7528;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;</td>
+</tr>
+<tr>
+<td>Content-Language</td>
+<td>&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x7684;&#x81EA;&#x7136;&#x8BED;&#x8A00;</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x7684;&#x5927;&#x5C0F;(&#x5355;&#x4F4D;:&#x5B57;&#x8282;)</td>
+</tr>
+<tr>
+<td>Content-Location</td>
+<td>&#x66FF;&#x4EE3;&#x5BF9;&#x5E94;&#x8D44;&#x6E90;&#x7684;URI</td>
+</tr>
+<tr>
+<td>Content-MD5</td>
+<td>&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x7684;&#x62A5;&#x6587;&#x6458;&#x8981;</td>
+</tr>
+<tr>
+<td>Content-Range</td>
+<td>&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x7684;&#x4F4D;&#x7F6E;&#x8303;&#x56F4;</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x7684;&#x5A92;&#x4F53;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td>Expires</td>
+<td>&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x8FC7;&#x671F;&#x7684;&#x65E5;&#x671F;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>Last-Modified</td>
+<td>&#x8D44;&#x6E90;&#x7684;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65E5;&#x671F;&#x65F6;&#x95F4;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="allow"><a name="allow" class="anchor-navigation-ex-anchor" href="#allow"><i class="fa fa-link" aria-hidden="true"></i></a>Allow</h4>
+<p>&#x901A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;&#x80FD;&#x591F;&#x652F;&#x6301; Request-URI &#x6307;&#x5B9A;&#x8D44;&#x6E90;&#x7684;&#x6240;&#x6709; HTTP &#x65B9;&#x6CD5;&#x3002;&#x5F53;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x6536;&#x5230;&#x4E0D;&#x652F;&#x6301;&#x7684; HTTP &#x65B9;&#x6CD5;&#x65F6;,&#x4F1A;&#x4EE5;&#x72B6;&#x6001;&#x7801; 405 Method Not Allowed &#x4F5C;&#x4E3A;&#x54CD;&#x5E94;&#x8FD4;&#x56DE;&#x3002;&#x4E0E;&#x6B64;&#x540C;&#x65F6;, &#x8FD8;&#x4F1A;&#x628A;&#x6240;&#x6709;&#x80FD;&#x652F;&#x6301;&#x7684; HTTP &#x65B9;&#x6CD5;&#x5199;&#x5165;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Allow &#x540E;&#x8FD4;&#x56DE;&#x3002;</p>
+<pre class="language-"><code>Allow: GET, HEAD
+</code></pre><h4 id="content-encoding"><a name="content-encoding" class="anchor-navigation-ex-anchor" href="#content-encoding"><i class="fa fa-link" aria-hidden="true"></i></a>Content-Encoding</h4>
+<p>&#x544A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;&#x670D;&#x52A1;&#x5668;&#x5BF9;&#x5B9E;&#x4F53;&#x7684;&#x4E3B;&#x4F53;&#x90E8;&#x5206;&#x9009;&#x7528;&#x7684;&#x5185;&#x5BB9;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#xFF0C;&#x4E3B;&#x8981;&#x6709;&#x56DB;&#x79CD;&#xFF0C;<strong>gzip</strong>&#xFF0C;<strong>compress</strong>&#xFF0C;<strong>deflate</strong>&#xFF0C;<strong>identity</strong> &#x3002;</p>
+<h4 id="content-language"><a name="content-language" class="anchor-navigation-ex-anchor" href="#content-language"><i class="fa fa-link" aria-hidden="true"></i></a>Content-Language</h4>
+<p>&#x544A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;, &#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x4F7F;&#x7528;&#x7684;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x3002;</p>
+<h4 id="content-length"><a name="content-length" class="anchor-navigation-ex-anchor" href="#content-length"><i class="fa fa-link" aria-hidden="true"></i></a>Content-Length</h4>
+<p>&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x90E8;&#x5206;&#x7684;&#x5927;&#x5C0F;(&#x5355;&#x4F4D;&#x662F;&#x5B57;&#x8282;)&#x3002;&#x5BF9;&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x8FDB;&#x884C;&#x5185;&#x5BB9;&#x7F16;&#x7801;&#x4F20;&#x8F93;&#x65F6;, &#x4E0D;&#x80FD;&#x518D;&#x4F7F;&#x7528; Content-Length
+&#x9996;&#x90E8;&#x5B57;&#x6BB5;&#x3002;</p>
+<h4 id="content-location"><a name="content-location" class="anchor-navigation-ex-anchor" href="#content-location"><i class="fa fa-link" aria-hidden="true"></i></a>Content-Location</h4>
+<p>&#x9996;&#x90E8;&#x5B57;&#x6BB5; Content-Location &#x7ED9;&#x51FA;&#x4E0E;&#x62A5;&#x6587;&#x4E3B;&#x4F53;&#x90E8;&#x5206;&#x76F8;&#x5BF9;&#x5E94;&#x7684; URI&#x3002;&#x548C;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Location &#x4E0D;&#x540C;, Content-Location &#x8868;&#x793A;&#x7684;&#x662F;&#x62A5;&#x6587;&#x4E3B;&#x4F53;&#x8FD4;&#x56DE;&#x8D44;&#x6E90;&#x5BF9;&#x5E94;&#x7684; URI&#x3002;</p>
+<h4 id="content-md5"><a name="content-md5" class="anchor-navigation-ex-anchor" href="#content-md5"><i class="fa fa-link" aria-hidden="true"></i></a>Content-MD5</h4>
+<p>&#x9996;&#x90E8;&#x5B57;&#x6BB5; Content-MD5 &#x662F;&#x4E00;&#x4E32;&#x7531; MD5 &#x7B97;&#x6CD5;&#x751F;&#x6210;&#x7684;&#x503C;, &#x5176;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#x68C0;&#x67E5;&#x62A5;&#x6587;&#x4E3B;&#x4F53;&#x5728;&#x4F20;&#x8F93;&#x8FC7;&#x7A0B;&#x4E2D;&#x662F;&#x5426;&#x4FDD;&#x6301;&#x5B8C;&#x6574;, &#x4EE5;&#x53CA;&#x786E;&#x8BA4;&#x4F20;&#x8F93;&#x5230;&#x8FBE;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x4F1A;&#x5BF9;&#x63A5;&#x6536;&#x7684;&#x62A5;&#x6587;&#x4E3B;&#x4F53;&#x6267;&#x884C;&#x76F8;&#x540C;&#x7684; MD5 &#x7B97;&#x6CD5;, &#x7136;&#x540E;&#x4E0E;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Content-MD5 &#x7684;&#x5B57;&#x6BB5;&#x503C;&#x6BD4;&#x8F83;&#x3002;</p>
+<h4 id="content-range"><a name="content-range" class="anchor-navigation-ex-anchor" href="#content-range"><i class="fa fa-link" aria-hidden="true"></i></a>Content-Range</h4>
+<p>&#x9488;&#x5BF9;&#x8303;&#x56F4;&#x8BF7;&#x6C42;, &#x8FD4;&#x56DE;&#x54CD;&#x5E94;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Content-Range, &#x80FD;&#x544A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;&#x4F5C;&#x4E3A;&#x54CD;&#x5E94;&#x8FD4;&#x56DE;&#x7684;&#x5B9E;&#x4F53;&#x7684;&#x54EA;&#x4E2A;&#x90E8;&#x5206;&#x7B26;&#x5408;&#x8303;&#x56F4;&#x8BF7;&#x6C42;&#x3002;&#x5B57;&#x6BB5;&#x503C;&#x4EE5;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;, &#x8868;&#x793A;&#x5F53;&#x524D;&#x53D1;&#x9001;&#x90E8;&#x5206;&#x53CA;&#x6574;&#x4E2A;&#x5B9E;&#x4F53;&#x5927;&#x5C0F;&#x3002;</p>
+<pre class="language-"><code>Content-Range: bytes 5001-10000/10000
+</code></pre><h4 id="content-type"><a name="content-type" class="anchor-navigation-ex-anchor" href="#content-type"><i class="fa fa-link" aria-hidden="true"></i></a>Content-Type</h4>
+<p>&#x5B9E;&#x4F53;&#x4E3B;&#x4F53;&#x5185;&#x5BF9;&#x8C61;&#x7684;&#x5A92;&#x4F53;&#x7C7B;&#x578B;&#x3002;</p>
+<pre class="language-"><code>Content-Type: text/html; charset=UTF-8
+</code></pre><h4 id="expires"><a name="expires" class="anchor-navigation-ex-anchor" href="#expires"><i class="fa fa-link" aria-hidden="true"></i></a>Expires</h4>
+<p>&#x9996;&#x90E8;&#x5B57;&#x6BB5; Expires &#x4F1A;&#x5C06;&#x8D44;&#x6E90;&#x5931;&#x6548;&#x7684;&#x65E5;&#x671F;&#x544A;&#x77E5;&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x7F13;&#x5B58;&#x670D;&#x52A1;&#x5668;&#x5728;&#x63A5;&#x6536;&#x5230;&#x542B;&#x6709;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Expires &#x7684;&#x54CD;&#x5E94;&#x540E;, &#x4F1A;&#x4EE5;&#x7F13;&#x5B58;&#x6765;&#x5E94;&#x7B54;&#x8BF7;&#x6C42;, &#x5728; Expires &#x5B57;&#x6BB5;&#x503C;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x4E4B;&#x524D;,&#x54CD;&#x5E94;&#x7684;&#x526F;&#x672C;&#x4F1A;&#x4E00;&#x76F4;&#x88AB;&#x4FDD;&#x5B58;&#x3002;&#x5F53;&#x8D85;&#x8FC7;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x540E;, &#x7F13;&#x5B58;&#x670D;&#x52A1;&#x5668;&#x5728;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x8FC7;&#x6765;&#x65F6;, &#x4F1A;&#x8F6C;&#x5411;&#x6E90;&#x670D;&#x52A1;&#x5668;&#x8BF7;&#x6C42;&#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x6E90;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x5E0C;&#x671B;&#x7F13;&#x5B58;&#x670D;&#x52A1;&#x5668;&#x5BF9;&#x8D44;&#x6E90;&#x7F13;&#x5B58;&#x65F6;, &#x6700;&#x597D;&#x5728; Expires &#x5B57;&#x6BB5;&#x5185;&#x5199;&#x5165;&#x4E0E;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Date &#x76F8;&#x540C;&#x7684;&#x65F6;&#x95F4;&#x503C;&#x3002;&#x4F46;&#x662F;, &#x5F53;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Cache-Control &#x6709;&#x6307;&#x5B9A; max-age &#x6307;&#x4EE4;&#x65F6;, &#x6BD4;&#x8D77;&#x9996;&#x90E8;&#x5B57;&#x6BB5; Expires, &#x4F1A;&#x4F18;&#x5148;&#x5904;&#x7406; max-age &#x6307;&#x4EE4;&#x3002;</p>
+<h4 id="last-modified"><a name="last-modified" class="anchor-navigation-ex-anchor" href="#last-modified"><i class="fa fa-link" aria-hidden="true"></i></a>Last-Modified</h4>
+<p>&#x9996;&#x90E8;&#x5B57;&#x6BB5; Last-Modified &#x6307;&#x660E;&#x8D44;&#x6E90;&#x6700;&#x7EC8;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x95F4;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;, &#x8FD9;&#x4E2A;&#x503C;&#x5C31;&#x662F; Request-URI &#x6307;&#x5B9A;&#x8D44;&#x6E90;&#x88AB;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> By <a href="https://github.com/lulululbj" target="_blank">&#x79C9;&#x5FC3;&#x8BF4;</a>&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x76F8;&#x540C;&#x65B9;&#x5F0F;&#x5171;&#x4EAB; 4.0&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x6B64;&#x9875;&#x9762;&#x4FEE;&#x8BA2;&#x4E8E;&#xFF1A; 2020-02-23 16:02:15 </span> </footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: About">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../chap02/2-1.html" class="navigation navigation-next " aria-label="Next page: 2-1">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"HTTP","level":"2.1","depth":1,"next":{"title":"2-1","level":"3.1","depth":1,"path":"chap02/2-1.md","ref":"./chap02/2-1.md","articles":[]},"previous":{"title":"About","level":"1.1","depth":1,"path":"README.md","ref":"./README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","-sharing","disqus","github-buttons","editlink","ga","-highlight","prism","bibtex-indexed-cite","anchor-navigation-ex","page-footer-ex","splitter","todo","copy-code-button","expandable-chapters-small","donate"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"ignore":["mermaid","eval-js"],"css":["prismjs/themes/prism-solarizedlight.css"]},"disqus":{"useIdentifier":false,"shortName":"gitbook-template"},"editlink":{"label":"Edit","multilingual":false,"base":"https://github.com/riskers/gitbook-template/blob/master"},"todo":{},"page-footer-ex":{"copyright":"By [秉心说](https://github.com/lulululbj)，使用[知识共享 署名-相同方式共享 4.0协议](https://creativecommons.org/licenses/by-sa/4.0/)发布","markdown":true,"update_format":"YYYY-MM-DD HH:mm:ss","update_label":"此页面修订于："},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"https://riskers.github.io/gitbook-template/alipay.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://riskers.github.io/gitbook-template/wechat.jpg","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"bibtex-indexed-cite":{"path":"/"},"github-buttons":{"buttons":[{"user":"lulululbj","repo":"android-system","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"copy-code-button":{},"ga":{"configuration":"auto","token":"UA-131910384-3"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"秉心说","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"bibCount":0,"variables":{},"title":"Android System","bib":[],"gitbook":"*"},"file":{"path":"network/http.md","mtime":"2020-02-23T16:02:15.303Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-23T16:02:59.823Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
